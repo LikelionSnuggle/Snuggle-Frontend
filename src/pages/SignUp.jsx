@@ -21,6 +21,7 @@ export default function SignUp() {
   const handleNext = () => {
     // 유효성 검사 : 영문, 숫자, 특수문자 포함 8자 이상
     const regex =
+      //eslint-disable-next-line
       /^(?=.*[A-Za-z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-])[A-Za-z\d!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]{8,}$/;
     const isValidPw = regex.test(pwCheck);
 
