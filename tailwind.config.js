@@ -3,6 +3,9 @@ module.exports = {
   content: ["./public/index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      colors: {
+        signature: "#F29D38",
+      },
       keyframes: {
         spin: {
           "0%": { transform: "rotate(0deg)" },
