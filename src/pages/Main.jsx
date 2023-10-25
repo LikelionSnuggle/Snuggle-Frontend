@@ -1,6 +1,6 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import { GlobalColors } from "../styles/Styles";
+// import { useEffect, useState } from "react";
+// import { GlobalColors } from "../styles/Styles";
 import "../css/splashTitle.css";
 
 import backgroundImage from "../assets/splash/splash-background.png";
@@ -31,7 +31,7 @@ function Main() {
           <SplashIconX height="66" className="animate-fadeInOutFast" />
         </div>
         {/* <p className="w-full text-center text-white font-bold text-[32px] mt-[60px]">
-          SNUGLE
+          SNUGGLE
         </p> */}
         <div className="flex justify-center w-full mt-[44px]">
           <svg className="intro go" viewBox="0 0 200 86">
@@ -42,7 +42,7 @@ function Main() {
               className="text text-stroke"
               clip-path="url(#text1)"
             >
-              SNUGLE
+              SNUGGLE
             </text>
             <text
               text-anchor="middle"
@@ -51,12 +51,12 @@ function Main() {
               className="text text-stroke text-stroke-2"
               clip-path="url(#text1)"
             >
-              SNUGLE
+              SNUGGLE
             </text>
             <defs>
               <clipPath id="text1">
                 <text text-anchor="middle" x="100" y="30" className="text">
-                  SNUGLE
+                  SNUGGLE
                 </text>
               </clipPath>
             </defs>
