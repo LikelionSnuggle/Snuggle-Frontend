@@ -116,3 +116,7 @@
   src: url("./fonts/IBMPlexSans-BoldItalic.ttf") format("truetype");
   font-display: swap;
 }
+
+p {
+  font-family: "IBM-Plex-Sans";
+}
