@@ -1,11 +1,12 @@
 svg.intro.go .text {
   font-family: "IBM-Plex-Sans";
-  font-size: 14px;
+  font-size: 19px;
   font-weight: 600;
+  letter-spacing: -1px;
 }
 svg.intro.go .text-stroke {
   fill: none;
-  stroke: #ffac30;
+  stroke: #fcbc5b;
   stroke-width: 2.8px;
   stroke-dashoffset: -900;
   stroke-dasharray: 900;
@@ -21,13 +22,8 @@ svg.intro.go .text-stroke:nth-child(3) {
 }
 svg.intro.go .text-stroke-2 {
   stroke: #ffffff;
+  stroke-width: 3.5px;
   animation-delay: 1.2s;
-}
-svg.intro.go .text-stroke:nth-child(5) {
-  animation-delay: 1.5s;
-}
-svg.intro.go .text-stroke:nth-child(6) {
-  animation-delay: 1.8s;
 }
 
 @keyframes dash {
@@ -39,7 +35,7 @@ svg.intro.go .text-stroke:nth-child(6) {
   5% {
     stroke-dashoffset: 900;
   }
-  25% {
+  35% {
     stroke-dashoffset: 0;
   }
 }
