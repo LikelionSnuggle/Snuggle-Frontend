@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import SplashScreen from "../components/SplashScreen";
 import mainBackground from "../assets/main-background.png";
+import RowButton from "../components/RowButton";
 
 function Main() {
   const [splash, setSplash] = useState(true);
@@ -63,12 +64,12 @@ function Main() {
             <p className="text-white text-[18px]">너를 위한 스테이지그라운드</p>
           </div>
           <div className="flex flex-col items-center gap-4 w-full">
-            <button className="w-full max-w-[420px] h-[58.76px] text-white bg-signature font-semibold rounded-lg">
-              로그인
-            </button>
-            <button className="w-full max-w-[420px] h-[58.76px] bg-white text-signature font-semibold rounded-lg">
-              회원가입
-            </button>
+            <RowButton text="로그인" />
+            <RowButton
+              text="회원가입"
+              backgroundColor="bg-white"
+              fontColor="text-signature"
+            />
           </div>
         </div>
       )}
