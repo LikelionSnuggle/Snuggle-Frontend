@@ -4,8 +4,8 @@ import KakaoMap from "../components/KakaoMap";
 
 export default function Map() {
   return (
-    <div>
-      <KakaoMap />
+    <div className={`w-full h-full`}>
+      <KakaoMap height="100rem" widht="100rem"/>
     </div>
   );
 }
