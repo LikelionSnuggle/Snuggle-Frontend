@@ -1,7 +1,7 @@
 import React from 'react'
 import thumbnail from '../assets/performDetail/performDetail-thumbnail.jpg'
 import scrapIcon from '../assets/all-icon-scrap.svg'
-import locationIcon from '../assets/all-icon-location.svg'
+import locationIcon from '../assets/all-icon-location-orange.svg'
 import calendarIcon from '../assets/all-icon-calendar.svg'
 import linkIcon from '../assets/all-icon-link.svg'
 import tagIcon from '../assets/all-icon-tag.svg'
@@ -62,7 +62,7 @@ export default function PerformDetail() {
         </div>
         {/* 카카오맵 */}
         <div className={`w-full h-[288px] mt-[32px]`}>
-          <KakaoMap height="288px" widht="100rem" />
+          <KakaoMap height="288px" width="30rem" />
         </div>
         {/* 페이지 */}
         <div className={`flex flex-row w-full h-fit px-[16px] py-[24px]`}>
