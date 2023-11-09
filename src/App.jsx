@@ -5,6 +5,7 @@ import SignUp from "./pages/SignUp";
 import Map from "./pages/Map";
 import Home from "./pages/Home";
 import PerformDetail from "./pages/PerformDetail";
+import PerformPost from "./pages/PerformPost";
 import Navigation from "./pages/Navigation";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="map" element={<Map />}/>
         <Route path="home" element={<Home />}/>
         <Route path="perform/detail" element={<PerformDetail />}/>
+        <Route path="perform/post" element={<PerformPost />}/>
         <Route path="navigation" element={<Navigation />}/>
       </Routes>
     </BrowserRouter>
