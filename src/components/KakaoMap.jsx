@@ -6,7 +6,7 @@ import Modal from "react-modal";
 const { kakao } = window;
 Modal.setAppElement("#root");
 
-export default function KakaoMap() {
+export default function KakaoMap({ height, width }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
 
@@ -73,7 +73,7 @@ export default function KakaoMap() {
 
   return (
     <div style={{ position: "relative" }}>
-      <div id="map" style={{ width: `480px`, height: `852px` }}>
+      <div id="map" style={{ width: width , height: height }}>
         {isModalOpen && (
           <Modal
             className={`fixed top-1/2 left-1/2 
