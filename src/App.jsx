@@ -6,6 +6,9 @@ import Map from "./pages/Map";
 import Home from "./pages/Home";
 import PerformDetail from "./pages/PerformDetail";
 import Navigation from "./pages/Navigation";
+import NewPerformList from "./pages/NewPerform";
+import NewPerform from "./pages/NewPerform";
+import NearPerform from "./pages/NearPerform";
 
 function App() {
   return (
@@ -15,6 +18,8 @@ function App() {
         <Route path="signup" element={<SignUp />} />
         <Route path="map" element={<Map />}/>
         <Route path="home" element={<Home />}/>
+        <Route path="newperform" element={<NewPerform />}/>
+        <Route path="nearperform" element={<NearPerform />}/>
         <Route path="perform/detail" element={<PerformDetail />}/>
         <Route path="navigation" element={<Navigation />}/>
       </Routes>
