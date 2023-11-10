@@ -1,7 +1,7 @@
 import React from "react";
 import thumbnail from "../assets/performDetail/performDetail-thumbnail.jpg";
 import scrapIcon from "../assets/all-icon-scrap.svg";
-import locationIcon from "../assets/all-icon-location.svg";
+import locationIcon from "../assets/all-icon-location-orange.svg";
 import calendarIcon from "../assets/all-icon-calendar.svg";
 import linkIcon from "../assets/all-icon-link.svg";
 import tagIcon from "../assets/all-icon-tag.svg";
@@ -84,18 +84,22 @@ export default function PerformDetail() {
             </div>
           </div>
         </div>
-      </div>
-      {/* 카카오맵 */}
-      <div className={`w-full h-[288px] mt-[32px]`}>
-        <KakaoMap height="288px" widht="100rem" />
-      </div>
-      {/* 페이지 */}
-      <div className={`flex flex-row w-full h-fit px-[16px] py-[24px]`}>
-        <img className={`w-[90px] h-[90px]`} src={thumbnail} />
-        <div className={`flex flex-col px-[16px]`}>
-          <div className={`flex flex-row justify-between`}>
-            <p className={`font-bold my-2`}>멋쟁이 사자처럼</p>
-            <img src={nextIcon} />
+        {/* 카카오맵 */}
+        <div className={`w-full h-[288px] mt-[32px]`}>
+          <KakaoMap height="288px" width="30rem" />
+        </div>
+        {/* 페이지 */}
+        <div className={`flex flex-row w-full h-fit px-[16px] py-[24px]`}>
+          <img className={`w-[90px] h-[90px]`} src={thumbnail} />
+          <div className={`flex flex-col px-[16px]`}>
+            <div className={`flex flex-row justify-between`}>
+              <p className={`font-bold my-2`}>멋쟁이 사자처럼</p>
+              <img src={nextIcon} />
+            </div>
+            <p className={`font-normal text-sm py-0`}>
+              한양대학교 ERICA캠퍼스 실용음악과 15학번 한승우, 김예은, 16학번
+              음상훈, 전고은 학번은 ...
+            </p>
           </div>
           <p className={`font-normal text-sm py-0`}>
             한양대학교 ERICA캠퍼스 실용음악과 15학번 한승우, 김예은, 16학번
