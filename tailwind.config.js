@@ -6,7 +6,8 @@ module.exports = {
       colors: {
         signature: "#F29D38",
         signatureLight: "#E6AE5A",
-        signatureThin: "#FFF3DB"
+        signatureThin: "#FFF3DB",
+        lightGrey: "#ACACAC",
       },
       keyframes: {
         spin: {
