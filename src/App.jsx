@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import PerformDetail from "./pages/PerformDetail";
 import PerformPost from "./pages/PerformPost";
 import Navigation from "./components/Navigation";
-import NewPerformList from "./pages/NewPerform";
+// import NewPerformList from "./pages/NewPerform";
 import NewPerform from "./pages/NewPerform";
 import NearPerform from "./pages/NearPerform";
 

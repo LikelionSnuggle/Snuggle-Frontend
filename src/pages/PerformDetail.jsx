@@ -12,7 +12,7 @@ import KakaoMap from "../components/KakaoMap";
 export default function PerformDetail() {
   return (
     <div className={`flex flex-col text-justify`}>
-      <img className={"w-full h-[270px]"} src={thumbnail} />
+      <img className={"w-full h-[270px]"} src={thumbnail} alt="thumbnail" />
 
       {/* 남은 날짜, 유료/무료 여부 */}
       <div className={`flex flex-row gap-2 w-full p-[16px]`}>
@@ -32,19 +32,19 @@ export default function PerformDetail() {
       {/* title, scrap 버튼 */}
       <div className={"flex flex-row justify-between px-[16px] w-full"}>
         <p className={`text-black text-3xl font-bold`}>스너글 페스티벌 2023</p>
-        <img className={`mx-2`} src={scrapIcon} />
+        <img className={`mx-2`} src={scrapIcon} alt="scrapIcon" />
       </div>
       <hr className={`my-4`} />
       {/* 장소, 날짜 */}
       <div className={`flex flex-row gap-2 w-full px-[16px]`}>
         <div className="flex flex-row w-fit h-fit px-[12px] py-[6px] bg-signatureThin rounded-full gap-2">
-          <img src={locationIcon} />
+          <img src={locationIcon} alt="locationIcon" />
           <div className={`font-semibold text-signatureLight`}>
             잠실종합운동장
           </div>
         </div>
         <div className="flex flex-row w-fit h-fit px-[12px] py-[6px] bg-signatureThin rounded-full gap-2">
-          <img src={calendarIcon} />
+          <img src={calendarIcon} alt="calendarIcon" />
           <div className={`font-semibold text-signatureLight`}>
             23-09-27 18:00
           </div>
@@ -58,11 +58,11 @@ export default function PerformDetail() {
       {/* 인터파크 링크, 태그 */}
       <div className="flex flex-col gap-4 px-[22px]">
         <div className={`flex flex-row w-full gap-4`}>
-          <img src={linkIcon} />
+          <img src={linkIcon} alt="linkIcon" />
           <p className={`font-semibold`}>스너글 페스티벌 2023</p>
         </div>
         <div className={`flex flex-row w-full gap-4`}>
-          <img src={tagIcon} />
+          <img src={tagIcon} alt="tagIcon" />
           <div className="flex flex-row gap-2">
             <div
               className={`w-fit h-fit px-[6px] py-[2px] bg-zinc-200 rounded
@@ -90,11 +90,15 @@ export default function PerformDetail() {
         </div>
         {/* 페이지 */}
         <div className={`flex flex-row w-full h-fit px-[16px] py-[24px]`}>
-          <img className={`w-[90px] h-[90px]`} src={thumbnail} />
+          <img
+            className={`w-[90px] h-[90px]`}
+            src={thumbnail}
+            alt="thumbnail"
+          />
           <div className={`flex flex-col px-[16px]`}>
             <div className={`flex flex-row justify-between`}>
               <p className={`font-bold my-2`}>멋쟁이 사자처럼</p>
-              <img src={nextIcon} />
+              <img src={nextIcon} alt="nextIcon" />
             </div>
             <p className={`font-normal text-sm py-0`}>
               한양대학교 ERICA캠퍼스 실용음악과 15학번 한승우, 김예은, 16학번
@@ -114,7 +118,11 @@ export default function PerformDetail() {
         <p className={`w-[40px] font-semibold text-zinc-400`}>문의</p>
         <div className={`h-[32px] w-[4px] bg-zinc-300`} />
         <div className={`flex flex-row gap-4 w-full`}>
-          <img className={`w-[20px] h-[20px]`} src={phoneIcon} />
+          <img
+            className={`w-[20px] h-[20px]`}
+            src={phoneIcon}
+            alt="phoneIcon"
+          />
           <p className={`font-semibold text-zinc-400`}>010 - 1234 - 6789</p>
         </div>
       </div>

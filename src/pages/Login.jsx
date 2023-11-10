@@ -8,7 +8,9 @@ import RowButton from "../components/RowButton";
 function Login() {
   const navigate = useNavigate();
 
+  // eslint-disable-next-line
   const [email, setEmail] = useState();
+  // eslint-disable-next-line
   const [pw, setPw] = useState();
   const [pwVisible, setPWVisible] = useState("password");
 
