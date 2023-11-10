@@ -73,6 +73,7 @@ function Main() {
               text="회원가입"
               backgroundColor="bg-white"
               fontColor="text-signature"
+              onClick={() => navigate("signup")}
             />
           </div>
         </div>

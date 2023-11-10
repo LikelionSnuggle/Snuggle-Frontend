@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import GrayInput from "../components/GrayInput";
 import { ReactComponent as PWIcon } from "../assets/pw-visible.svg";
 import RowButton from "../components/RowButton";
 
 function Login() {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState();
   const [pw, setPw] = useState();
   const [pwVisible, setPWVisible] = useState("password");
@@ -38,7 +41,10 @@ function Login() {
       </div>
       <div className="flex justify-center">
         <p className="text-[15px]">아직 계정이 없으신가요?&nbsp;</p>
-        <button className="text-[15px] text-[#F29D38] font-bold">
+        <button
+          className="text-[15px] text-[#F29D38] font-bold"
+          onClick={() => navigate("/signup")}
+        >
           회원가입
         </button>
       </div>
