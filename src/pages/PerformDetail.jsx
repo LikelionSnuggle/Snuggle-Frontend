@@ -62,7 +62,7 @@ export default function PerformDetail() {
         </div>
         {/* 카카오맵 */}
         <div className={`w-full h-[288px] mt-[32px]`}>
-          <KakaoMap height="288px" width="30rem" />
+          <KakaoMap height="288px" width="100vh" />
         </div>
         {/* 페이지 */}
         <div className={`flex flex-row w-full h-fit px-[16px] py-[24px]`}>

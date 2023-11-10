@@ -4,9 +4,24 @@ import locationIcon from '../assets/all-icon-location-gray.svg'
 
 
 export default function PerformCard({img, date, payment, title, location, scraped}) {
+  
+  const backgroundStyle = {
+    backgroundImage: `url(${img})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    height: "460px",
+    backgroundColor: "grey",
+  };
+
   return (
     <div className={`flex flex-col rounded bg-zinc-200 w-full h-full`}>
-      <img className={`w-full h-1/2 rounded-t`} src={img}/>
+      <div className={`w-full h-1/2 rounded-t`} style={backgroundStyle}>
+        <div className='flex flex-row my-[8px] text-[8px] text-white mx-[4px] gap-1'>
+          <div className={`rounded-full border-2 border-white w-fit h-fit px-[4px]`}>HOT</div>
+          <div className={`rounded-full border-2 border-white w-fit h-fit px-[4px]`}>공연정보</div>
+        </div>
+      </div>
       <div className={`w-full h-1/2 flex flex-row w-full `}>
         <div className='flex flex-col gap-1 h-full w-full content-center my-2 ml-2'>
             <div className={`flex flex-row gap-1 w-full`}>
