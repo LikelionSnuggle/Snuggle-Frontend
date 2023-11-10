@@ -2,8 +2,7 @@ import React from 'react'
 import scrapIcon from '../assets/all-icon-scrap.svg'
 import locationIcon from '../assets/all-icon-location-gray.svg'
 
-
-export default function PerformCard({img, date, payment, title, location, scraped}) {
+export default function PerformCardBig() {
   return (
     <div className={`flex flex-col rounded bg-zinc-200 w-full h-full`}>
       <img className={`w-full h-1/2 rounded-t`} src={img}/>

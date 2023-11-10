@@ -11,7 +11,7 @@ import KakaoMap from '../components/KakaoMap'
 
 export default function PerformDetail() {
   return (
-    <div className={`flex flex-col font-['IBM-Plex-Sans'] text-justify`}>
+    <div className={`flex flex-col text-justify`}>
         <img className={'w-full h-[270px]'} src={thumbnail}/>
 
         {/* 남은 날짜, 유료/무료 여부 */}

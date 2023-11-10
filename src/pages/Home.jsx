@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
-    <div className={`w-full h-100vh bg-white font-['IBM-Plex-Sans']`}>
+    <div className={`w-full h-100vh bg-white`}>
       {/* 배너 */}
       <div className={`w-full h-[460px]`}>
         <img className={`w-full h-full`} src={PerformThumbnail}/>
