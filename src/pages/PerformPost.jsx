@@ -6,7 +6,7 @@ const TextInput = ({ label, value, onChange }) => {
       <label className="text-lightGrey text-[22px] font-bold mt-8 ml-4 flex-shrink-0">{label}</label>
       <input
         type="text"
-        className="text-[22px] border-b border-gray-300 focus:outline-none focus:border-blue-500 px-3 py-2 w-[440px] h-12 ml-4 mr-4"
+        className="text-[22px] border-b bg-gray-100 border-gray-300 focus:outline-none focus:border-orange-400 h-12 px-3 py-2 mx-4 mt-2"
         value={value}
         onChange={onChange}
       />
@@ -37,20 +37,20 @@ const TicketPriceSelector = ({ selectedValue, onSelect }) => {
 
 const RegistOrSaver = ({ savedValue, onSave }) => {
   return (
-    <div className="position: fixed text-[19px] font-['IBM-Plex-Sans'] w-[400px] mt-6 ml-4">
+    <div className="text-[24px] font-['IBM-Plex-Sans'] w-full mt-16">
       <div
-        className={`h-16 rounded-2xl flex items-center justify-center cursor-pointer ${
+        className={`h-16 mx-4 rounded-2xl flex items-center justify-center cursor-pointer ${
           savedValue === '저장하기' ? 'bg-orange-400' : 'bg-gray-200'
         }`}
         onClick={() => onSave('저장하기')}
         style={{ zIndex: savedValue === '저장하기' ? 1 : 0}}
       >저장하기</div>
       <div
-        className={`h-16 mt-4 rounded-2xl flex items-center justify-center cursor-pointer ${
+        className={`h-16 mx-4 my-5 rounded-2xl flex items-center justify-center cursor-pointer ${
           savedValue === '등록하기' ? 'bg-orange-400' : 'bg-gray-200'
         }`}
         onClick={() => onSave('등록하기')}
-        style={{ zIndex: savedValue === '유료' ? 1 : 0, position: 'relative', left: '-35px' }}
+        style={{ zIndex: savedValue === '유료' ? 1 : 0}}
       >등록하기</div>
     </div>
   );
