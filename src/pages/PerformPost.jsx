@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import tagIcon from '../assets/all-icon-tag.svg'
 
-const TextInput = ({ label, value, onChange }) => {
+const TextInput = ({ label, value, onChange, onKeyPress }) => {
   return (
     <div className="mb-4 flex flex-col font-['IBM-Plex-Sans']">
       <label className="text-lightGrey text-[22px] font-bold mt-8 ml-4 flex-shrink-0">{label}</label>
@@ -9,6 +10,7 @@ const TextInput = ({ label, value, onChange }) => {
         className="text-[22px] border-b bg-gray-100 border-gray-300 focus:outline-none focus:border-orange-400 h-12 px-3 py-2 mx-4 mt-2"
         value={value}
         onChange={onChange}
+        onKeyPress={onKeyPress}
       />
     </div>
   );
@@ -66,6 +68,8 @@ export default function PerformPost() {
       input3: '',
       input4: '',
       input5: '',
+      input6: '',
+      tags: [],
     });
     
     const handleImageUpload = (event) => {
@@ -88,11 +92,44 @@ export default function PerformPost() {
     };
 
     const handleChange = (e, inputName) => {
-      setInputValues({
-        ...inputValues,
+      setInputValues((prevInputValues) => ({
+        ...prevInputValues,
         [inputName]: e.target.value,
+      }));
+    };
+
+    const handleEnterPress = (e) => {
+    if (e.key === 'Enter') {
+      // 엔터를 누르면 입력된 값을 표시하고, 입력 상자는 비우기
+      handleDisplay();
+    }
+  };
+
+    const handleDisplay = () => {
+      if (inputValues.input6.trim() !== '') {
+        //최대 8개의 태그만 허용
+        if (inputValues.tags.length < 8) {
+          setInputValues((prevInputValues) => ({
+            ...prevInputValues,
+            input6: '',
+            tags: [...(prevInputValues.tags || []), inputValues.input6.trim()],
+          }));
+        }
+      }
+    };
+
+    const handleRemoveTag = (index) => {
+      setInputValues((prevInputValues) => {
+        const newTags = [...prevInputValues.tags];
+        newTags.splice(index, 1);
+        return {
+          ...prevInputValues,
+          tags: newTags,
+        };
       });
     };
+
+    const boxWidth = inputValues.input1.length * 10;
 
     const handleTicketPriceSelect = (value) => {
       setInputValues({
@@ -160,7 +197,7 @@ export default function PerformPost() {
             />
           </div>
           <div>
-            <p className="text-lightGrey text-[22px] font-bold mt-8 ml-4">티켓가격</p>
+            <p className="text-lightGrey text-[22px] font-bold mt-8 ml-4">티켓 가격</p>
             <div>
               <TicketPriceSelector
                 selectedValue={inputValues.ticketPrice}
@@ -170,8 +207,31 @@ export default function PerformPost() {
             <div className="border-b border-gray-300 focus:outline-none w-[440px] ml-4 mr-4 mt-6"></div>
           </div>
           <div>
-            <p className="text-lightGrey text-[22px] font-bold mt-8 ml-4">태그설정</p>
-            <div className="border-b border-gray-300 focus:outline-none w-[440px] ml-4 mr-4 mt-6"></div>
+            <div className='flex'>
+              <img className={'w-8 ml-4 mt-8'} src={tagIcon}/>
+              <p className="text-lightGrey text-[22px] font-bold mt-8 ml-2">태그 설정</p>
+            </div>
+            <div>
+              <div className='flex flex-wrap'>
+                {inputValues.tags && inputValues.tags.map((tag, index) => (
+                  <div key={index} className='flex items-center justify-between w-24 h-8 pl-2 bg-gray-200 rounded-2xl mt-4 ml-4'>
+                    {tag}
+                    <button
+                    className="mr-2 text-gray-500 focus:outline-none"
+                    onClick={() => handleRemoveTag(index)}
+                    >
+                      X
+                    </button>
+                  </div>
+                ))}
+              </div>
+              <TextInput
+                label=""
+                value={inputValues.input6}
+                onChange={(e) => handleChange(e, 'input6')}
+                onKeyPress={handleEnterPress}
+              />
+            </div>
           </div>
           <div>
             <TextInput
