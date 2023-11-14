@@ -1,20 +1,44 @@
 import React from "react";
-import scrapIcon from "../assets/all-icon-scrap.svg";
+import scrapIcon from "../assets/all-icon-scrap-gray.svg";
 import locationIcon from "../assets/all-icon-location-gray.svg";
 
 export default function PerformCard({
   img,
+  tags,
   date,
   payment,
   title,
   location,
   scraped,
 }) {
+  const backgroundStyle = {
+    backgroundImage: `url(${img})`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    backgroundColor: "grey",
+  };
+
   return (
     <div
-      className={`flex flex-col rounded bg-zinc-200 w-full h-full`}
+      className={`flex flex-col rounded-lg bg-zinc-200 w-full h-full`}
     >
-      <img className={`w-full h-1/2 rounded-t`} src={img} alt="img1" />
+      <div className={`w-full h-1/2 rounded-t-lg`} style={backgroundStyle}>
+        <div className={`flex flex-row gap-1 m-[4px]`}>
+          {tags && tags.length > 0 ? (
+              tags.map((tag, index) => (
+                <div
+                  key={index}
+                  className={`text-[8px] text-white border border-white rounded-lg w-fit h-fit px-[2px]`}
+                >
+                  <p>{tag}</p>
+                </div>
+              ))
+            ) : (
+              <div></div>
+            )}
+        </div> 
+      </div>
       <div className={`w-full h-1/2 flex flex-row w-full`}>
         <div className="flex flex-col gap-1 h-full w-full content-center my-2 ml-2">
           <div className={`flex flex-row gap-1 w-full`}>
