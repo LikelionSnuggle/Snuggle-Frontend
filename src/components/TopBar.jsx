@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import { ReactComponent as ArrowLeftIcon } from "../assets/all-icon-arrow_left.svg";
+import IconArrowLeft from "../assets/All-icon-prev";
 import { ReactComponent as SearchIcon } from "../assets/all-icon-search.svg";
 
 function TopBar() {
@@ -9,7 +9,7 @@ function TopBar() {
   return (
     <div className="w-full px-[16px] h-[51px] flex justify-between items-center pr-6">
       <button onClick={() => navigate(-1)}>
-        <ArrowLeftIcon />
+        <IconArrowLeft width={38} height={38} fill="#ACACAC" />
       </button>
       <button>
         <SearchIcon />
