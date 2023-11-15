@@ -9,6 +9,7 @@ import PerformCardBig from '../components/PerformCardBig';
 export default function UpcomingPerform() {
   const performList = [
     {
+      id:0,
       img: PerformThumbnail,
       date: "D-8",
       payment: "유료",
@@ -19,6 +20,7 @@ export default function UpcomingPerform() {
       teamName : "멋쟁이 사자처럼"
     },
     {
+      id:1,
       img: PerformThumbnail,
       date: "D-8",
       payment: "유료",
@@ -29,6 +31,7 @@ export default function UpcomingPerform() {
       teamName : "멋쟁이 사자처럼"
     },
     {
+      id:2,
       img: PerformThumbnail,
       date: "D-5",
       payment: "무료",
@@ -39,6 +42,7 @@ export default function UpcomingPerform() {
       teamName : "멋쟁이 사자처럼"
     },
     {
+      id:3,
       img: PerformThumbnail,
       date: "D-5",
       payment: "무료",
@@ -49,6 +53,7 @@ export default function UpcomingPerform() {
       teamName : "멋쟁이 사자처럼"
     },
     {
+      id:4,
       img: PerformThumbnail,
       date: "D-5",
       payment: "무료",
@@ -59,6 +64,7 @@ export default function UpcomingPerform() {
       teamName : "멋쟁이 사자처럼"
     },
     {
+      id:5,
       img: PerformThumbnail,
       date: "D-5",
       payment: "무료",
@@ -94,6 +100,7 @@ export default function UpcomingPerform() {
         {performList.map((perform, index) => (
             <div key={index} className={`h-[288px] mb-4`}>
               <PerformCardBig
+                link={"/perform/detail/" + perform.id}
                 img={perform.img}
                 date={perform.date}
                 payment={perform.payment}

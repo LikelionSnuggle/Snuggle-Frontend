@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
 import PerformCard from '../components/PerformCardSmall'
 import PerformThumbnail from '../assets/performDetail-thumbnail.jpg'
 import fireImg from '../assets/home/home-image-fire.svg'
@@ -9,6 +8,7 @@ import PerformCardBig from "../components/PerformCardBig";
 export default function NearPerform() {
   const performList = [
     {
+      id:0,
       img: PerformThumbnail,
       date: "D-8",
       payment: "유료",
@@ -19,16 +19,18 @@ export default function NearPerform() {
       teamName : "멋쟁이 사자처럼"
     },
     {
+      id:1,
       img: PerformThumbnail,
       date: "D-8",
       payment: "유료",
       title: "스너글 페스티벌 2023",
       location: "잠실종합운동장",
-      scraped: false,
+      scraped: true,
       tags: ["콘서트", "관심공연"],
       teamName : "멋쟁이 사자처럼"
     },
     {
+      id:2,
       img: PerformThumbnail,
       date: "D-5",
       payment: "무료",
@@ -39,6 +41,7 @@ export default function NearPerform() {
       teamName : "멋쟁이 사자처럼"
     },
     {
+      id:3,
       img: PerformThumbnail,
       date: "D-5",
       payment: "무료",
@@ -49,22 +52,24 @@ export default function NearPerform() {
       teamName : "멋쟁이 사자처럼"
     },
     {
+      id:4,
       img: PerformThumbnail,
       date: "D-5",
       payment: "무료",
       title: "가을 캠프파이어",
       location: "한강 공원",
-      scraped: true,
+      scraped: false,
       tags: ["야외공연", "추천"],
       teamName : "멋쟁이 사자처럼"
     },
     {
+      id:5,
       img: PerformThumbnail,
       date: "D-5",
       payment: "무료",
       title: "가을 캠프파이어",
       location: "한강 공원",
-      scraped: true,
+      scraped: false,
       tags: ["야외공연", "추천"],
       teamName : "멋쟁이 사자처럼"
     },
@@ -94,6 +99,7 @@ export default function NearPerform() {
        {performList.map((perform, index) => (
           <div key={index} className={`h-[288px] mb-4`}>
             <PerformCardBig
+              link={"/perform/detail/" + perform.id}
               img={perform.img}
               date={perform.date}
               payment={perform.payment}

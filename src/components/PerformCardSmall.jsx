@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import scrapIcon from "../assets/all-icon-scrap-gray.svg";
+import scrapedIcon from "../assets/all-icon-scrap-orange-filled.svg"
 import locationIcon from "../assets/all-icon-location-gray.svg";
 
 export default function PerformCard({
+  link,
   img,
   tags,
   date,
@@ -19,10 +21,14 @@ export default function PerformCard({
     backgroundColor: "grey",
   };
 
+  const [isScraped, setIsScraped] = useState(scraped);
+  const handleScrapIconClick = (event) => {
+    event.stopPropagation(); 
+    setIsScraped((prev) => !prev); 
+  }
+
   return (
-    <div
-      className={`flex flex-col rounded-lg bg-zinc-200 w-full h-full`}
-    >
+    <div className={`flex flex-col rounded-lg bg-zinc-200 w-full h-full`}  onClick={() => window.location.href = link}>
       <div className={`w-full h-1/2 rounded-t-lg`} style={backgroundStyle}>
         <div className={`flex flex-row gap-1 m-[4px]`}>
           {tags && tags.length > 0 ? (
@@ -63,7 +69,11 @@ export default function PerformCard({
             </div>
           </div>
         </div>
-        <img src={scrapIcon} className="w-1/6 h-1/5 mt-2" alt="scrapIcon" />
+        <img 
+        src={isScraped ? scrapedIcon : scrapIcon}
+        onClick={handleScrapIconClick} 
+        className="w-1/5 h-1/3 mt-2" 
+        alt="scrapIcon" />
       </div>
     </div>
   );

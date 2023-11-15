@@ -14,6 +14,7 @@ import 'swiper/css';
 
 const performList = [
   {
+    id:0,
     img: PerformThumbnail,
     date: "D-8",
     payment: "유료",
@@ -23,6 +24,7 @@ const performList = [
     tags: ["콘서트", "관심공연"],
   },
   {
+    id:1,
     img: PerformThumbnail,
     date: "D-8",
     payment: "유료",
@@ -32,6 +34,7 @@ const performList = [
     tags: ["콘서트", "관심공연"],
   },
   {
+    id:2,
     img: PerformThumbnail,
     date: "D-8",
     payment: "유료",
@@ -41,6 +44,7 @@ const performList = [
     tags: ["콘서트", "관심공연"],
   },
   {
+    id:3,
     img: PerformThumbnail,
     date: "D-8",
     payment: "유료",
@@ -50,6 +54,7 @@ const performList = [
     tags: ["콘서트", "관심공연"],
   },
   {
+    id:4,
     img: PerformThumbnail,
     date: "D-5",
     payment: "무료",
@@ -121,16 +126,16 @@ export default function Home() {
         >
           <div className={`w-full h-fit`}>
             <SwiperSlide>
-              <PerformCard img={PerformThumbnail} date={"D-8"} payment={"유료"} title={"스너글 페스티벌 2023"} location={"잠실종합운동장"} scraped={false}/>
+              <PerformCard link={"/perform/detail/0"} img={PerformThumbnail} date={"D-8"} payment={"유료"} title={"스너글 페스티벌 2023"} location={"잠실종합운동장"} scraped={false}/>
             </SwiperSlide>
             <SwiperSlide>
-              <PerformCard img={PerformThumbnail} date={"D-8"} payment={"유료"} title={"스너글 페스티벌 2023"} location={"잠실종합운동장"} scraped={false}/>
+              <PerformCard link={"/perform/detail/1"} img={PerformThumbnail} date={"D-8"} payment={"유료"} title={"스너글 페스티벌 2023"} location={"잠실종합운동장"} scraped={false}/>
             </SwiperSlide>
             <SwiperSlide>
-              <PerformCard img={PerformThumbnail} date={"D-8"} payment={"유료"} title={"스너글 페스티벌 2023"} location={"잠실종합운동장"} scraped={false}/>
+              <PerformCard link={"/perform/detail/2"} img={PerformThumbnail} date={"D-8"} payment={"유료"} title={"스너글 페스티벌 2023"} location={"잠실종합운동장"} scraped={false}/>
             </SwiperSlide>
             <SwiperSlide>
-              <PerformCard img={PerformThumbnail} date={"D-8"} payment={"유료"} title={"스너글 페스티벌 2023"} location={"잠실종합운동장"} scraped={false}/>
+              <PerformCard link={"/perform/detail/3"} img={PerformThumbnail} date={"D-8"} payment={"유료"} title={"스너글 페스티벌 2023"} location={"잠실종합운동장"} scraped={false}/>
             </SwiperSlide>
           </div>
         </Swiper>
@@ -150,22 +155,29 @@ export default function Home() {
         <p className={`text-zinc-400`}>가장 최근에 등록된 공연순으로 보여드립니다</p>
       </div>
       {/* 무대들 */}
-      <div className={`w-100vh h-[150px] mx-[16px] mb-[16px] active:overflow-x-scroll`}>
+      <div className={`w-100vh h-[150px] mx-[16px] mb-[16px]`}>
+        <Swiper
+          className={`w-100vh h-[150px]`}
+          slidesPerView={2.4}
+          spaceBetween={10}
+          onSlideChange={() => console.log('slide change')}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
           <div className={`w-full h-fit`}>
-          {performList.map((perform, index) => (
-            <div key={index} className="w-[200px] h-full flex-shrink-0 mr-4">
-              <PerformCard
-                img={perform.img}
-                date={perform.date}
-                payment={perform.payment}
-                title={perform.title}
-                location={perform.location}
-                scraped={perform.scraped}
-                tags={perform.tags}
-              />
-            </div>
-          ))}
+            <SwiperSlide>
+              <PerformCard img={PerformThumbnail} date={"D-8"} payment={"유료"} title={"스너글 페스티벌 2023"} location={"잠실종합운동장"} scraped={false}/>
+            </SwiperSlide>
+            <SwiperSlide>
+              <PerformCard img={PerformThumbnail} date={"D-8"} payment={"유료"} title={"스너글 페스티벌 2023"} location={"잠실종합운동장"} scraped={false}/>
+            </SwiperSlide>
+            <SwiperSlide>
+              <PerformCard img={PerformThumbnail} date={"D-8"} payment={"유료"} title={"스너글 페스티벌 2023"} location={"잠실종합운동장"} scraped={false}/>
+            </SwiperSlide>
+            <SwiperSlide>
+              <PerformCard img={PerformThumbnail} date={"D-8"} payment={"유료"} title={"스너글 페스티벌 2023"} location={"잠실종합운동장"} scraped={false}/>
+            </SwiperSlide>
           </div>
+        </Swiper>
       </div>
   
       {/* 공연일이 임박한 스테이지 */}

@@ -25,7 +25,7 @@ function App() {
           <Route path="home/newperform" element={<NewPerform />} />
           <Route path="home/nearperform" element={<NearPerform />} />
           <Route path="home/upcomingperform" element={<UpcomingPerform />} />
-          <Route path="perform/detail" element={<PerformDetail />} />
+          <Route path="perform/detail/:id" element={<PerformDetail />} />
           <Route path="perform/post" element={<PerformPost />} />
         </Routes>
 

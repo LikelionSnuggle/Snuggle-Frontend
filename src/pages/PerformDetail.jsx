@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import thumbnail from "../assets/performDetail-thumbnail.jpg";
 import scrapIcon from "../assets/all-icon-scrap-gray.svg";
+import scrapedIcon from "../assets/all-icon-scrap-orange-filled.svg"
 import locationIcon from "../assets/all-icon-location-orange.svg";
 import calendarIcon from "../assets/all-icon-calendar.svg";
 import linkIcon from "../assets/all-icon-link.svg";
@@ -10,6 +11,11 @@ import nextIcon from "../assets/all-icon-next.svg";
 import KakaoMap from "../components/KakaoMap";
 
 export default function PerformDetail() {
+  const [isScraped, setIsScraped] = useState(false);
+  const handleScrapIconClick = () =>{
+    setIsScraped((prev) => !prev);
+  }
+
   return (
     <div className={`flex flex-col text-justify`}>
       <img className={"w-full h-[270px]"} src={thumbnail} alt="thumbnail" />
@@ -32,7 +38,11 @@ export default function PerformDetail() {
       {/* title, scrap 버튼 */}
       <div className={"flex flex-row justify-between px-[16px] w-full"}>
         <p className={`text-black text-3xl font-bold`}>스너글 페스티벌 2023</p>
-        <img className={`mx-2`} src={scrapIcon} alt="scrapIcon" />
+        <img 
+          className={`mx-2 p-0`} 
+          src={isScraped ? scrapedIcon : scrapIcon}
+          onClick={handleScrapIconClick} 
+          alt="scrapIcon" />
       </div>
       <hr className={`my-4`} />
       {/* 장소, 날짜 */}
