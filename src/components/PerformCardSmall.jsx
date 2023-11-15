@@ -3,8 +3,8 @@ import scrapIcon from "../assets/all-icon-scrap-gray.svg";
 import scrapedIcon from "../assets/all-icon-scrap-orange-filled.svg"
 import locationIcon from "../assets/all-icon-location-gray.svg";
 
-export default function PerformCard({
-  link,
+export default function PerformCardSmall({
+  id,
   img,
   tags,
   date,
@@ -28,7 +28,7 @@ export default function PerformCard({
   }
 
   return (
-    <div className={`flex flex-col rounded-lg bg-zinc-200 w-full h-full`}  onClick={() => window.location.href = link}>
+    <div className={`flex flex-col rounded-lg bg-zinc-200 w-full h-full`}  onClick={() => window.location.href = "/perform/detail/"+ id}>
       <div className={`w-full h-1/2 rounded-t-lg`} style={backgroundStyle}>
         <div className={`flex flex-row gap-1 m-[4px]`}>
           {tags && tags.length > 0 ? (

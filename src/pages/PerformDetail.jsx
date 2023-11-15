@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import thumbnail from "../assets/performDetail-thumbnail.jpg";
 import scrapIcon from "../assets/all-icon-scrap-gray.svg";
 import scrapedIcon from "../assets/all-icon-scrap-orange-filled.svg"

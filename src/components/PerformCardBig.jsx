@@ -4,7 +4,7 @@ import scrapedIcon from "../assets/all-icon-scrap-orange-filled.svg"
 import locationIcon from '../assets/all-icon-location-white.svg'
 
 export default function PerformCardBig({
-  link,
+  id,
   img,
   date,
   payment,
@@ -29,7 +29,7 @@ export default function PerformCardBig({
   }
 
   return (
-    <div className={`flex flex-col rounded-lg bg-zinc-200 w-full h-[288px]`} onClick={() => window.location.href = link}>
+    <div className={`flex flex-col rounded-lg bg-zinc-200 w-full h-[288px]`} onClick={() => window.location.href = "/perform/detail/"+id}>
       <div className={`w-full h-1/2 rounded-t-lg relative`} style={backgroundStyle}>
         <img 
         src={isScraped ? scrapedIcon : scrapIcon}
