@@ -11,6 +11,7 @@ import Navigation from "./components/Navigation";
 // import NewPerformList from "./pages/NewPerform";
 import NewPerform from "./pages/NewPerform";
 import NearPerform from "./pages/NearPerform";
+import ArtistProfile from "./pages/ArtistProfile";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="nearperform" element={<NearPerform />} />
           <Route path="perform/detail" element={<PerformDetail />} />
           <Route path="perform/post" element={<PerformPost />} />
+          <Route path="profile" element={<ArtistProfile />} />
         </Routes>
 
         <Navigation />
