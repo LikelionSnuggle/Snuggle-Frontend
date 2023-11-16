@@ -5,6 +5,7 @@ import IconNext from "../../assets/All-icon-next";
 
 function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [onClickDate, setOnClickDate] = useState("");
   // eslint-disable-next-line
   const [events, setEvents] = useState([
     { date: "2023-11-07", event: "라이브잼 콘서트" },
@@ -42,7 +43,23 @@ function Calendar() {
   };
 
   const isCurrentMonth = (date) => {
-    return date.getMonth() === currentDate.getMonth();
+    if (date.getMonth() === currentDate.getMonth()) {
+      return "current";
+    } else if (date.getMonth() < currentDate.getMonth()) {
+      return "prev";
+    } else {
+      return "next";
+    }
+  };
+
+  const clickDate = (date) => {
+    const dateString = formatDate(date);
+    if (isCurrentMonth(date) === "prev") {
+      handlePrevMonth();
+    } else if (isCurrentMonth(date) === "next") {
+      handleNextMonth();
+    }
+    setOnClickDate(dateString);
   };
 
   function formatDate(date) {
@@ -115,13 +132,6 @@ function Calendar() {
       ? currentDate.getMonth() + 1
       : "0" + (currentDate.getMonth() + 1);
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0); // 시간을 00:00:00으로 설정하여 오늘 날짜만 비교
-
-  const isToday = (date) => {
-    return date.getTime() === today.getTime();
-  };
-
   return (
     <>
       <div className="h-[80px] flex justify-center items-center gap-2">
@@ -155,16 +165,20 @@ function Calendar() {
         >
           {week.map((date) => {
             const eventInfo = getEventForDate(date);
+            const dateString = formatDate(date);
             return (
-              <div
-                key={date}
+              <button
+                key={dateString}
                 className={`flex flex-col items-center pt-[12px] ${
-                  isToday(date) ? "bg-[#EFEFEF]" : ""
-                }`}
+                  onClickDate === dateString ? "bg-[#EFEFEF]" : ""
+                } `}
+                onClick={() => clickDate(date)}
               >
                 <p
                   className={`font-medium text-[12px] ${
-                    !isCurrentMonth(date) ? "text-[#D4D4D4]" : "text-lightGrey"
+                    isCurrentMonth(date) === "current"
+                      ? "text-lightGrey"
+                      : "text-[#D4D4D4]"
                   }`}
                 >
                   {date.getDate()}
@@ -177,11 +191,14 @@ function Calendar() {
                     {eventInfo.event}
                   </p>
                 )}
-              </div>
+              </button>
             );
           })}
         </div>
       ))}
+      <div className="pt-[17px] px-4">
+        <p className="font-medium text-[18px]">공연 일정</p>
+      </div>
     </>
   );
 }

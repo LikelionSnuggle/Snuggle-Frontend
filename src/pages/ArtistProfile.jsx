@@ -19,36 +19,6 @@ function ArtistProfile() {
     ? "max-h-[2.8rem] overflow-hidden relative mb-[48px] px-[16px]"
     : "mb-[48px] px-[16px]";
 
-  function getCalendarData(year, month) {
-    // 현재 달의 첫 날과 마지막 날
-    const firstDayOfMonth = new Date(year, month, 1);
-    const lastDayOfMonth = new Date(year, month + 1, 0);
-
-    // 달력 시작 날짜: 현재 달의 첫 날보다 이전의 가장 가까운 일요일
-    const startDay = new Date(firstDayOfMonth);
-    startDay.setDate(startDay.getDate() - startDay.getDay());
-
-    // 달력 끝 날짜: 현재 달의 마지막 날 다음의 가장 가까운 토요일
-    const endDay = new Date(lastDayOfMonth);
-    endDay.setDate(endDay.getDate() + (6 - endDay.getDay()));
-
-    // 날짜 데이터를 담을 배열
-    const dates = [];
-
-    // 시작 날짜부터 끝 날짜까지 순회하며 날짜 배열에 추가
-    for (
-      let date = new Date(startDay);
-      date <= endDay;
-      date.setDate(date.getDate() + 1)
-    ) {
-      dates.push(new Date(date));
-    }
-
-    return dates;
-  }
-
-  console.log(getCalendarData(2023, 9));
-
   return (
     <div className="pb-[78px] h-full">
       <TopBar />
