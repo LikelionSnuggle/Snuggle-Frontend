@@ -1,11 +1,11 @@
 import React from 'react'
 import { useEffect } from "react";
-import pinImg from '../assets/home/home-image-redpin.svg'
+import handImg from '../assets/home/home-image-hand.svg'
 import PerformThumbnail from '../assets/performDetail-thumbnail.jpg'
 import PerformCardBig from '../components/PerformCardBig';
 
 
-export default function NewPerform() {
+export default function UpcomingPerform() {
   const performList = [
     {
       id:"0",
@@ -75,23 +75,25 @@ export default function NewPerform() {
     },
   ];
 
+
   useEffect(() => {
     window.scrollTo(0, 0); // 페이지 로딩 시 스크롤을 맨 위로 이동
   }, []);
 
   return (
     <div className={`bg-white w-full h-full mb-[16px] flex flex-col overscroll-none`}>
-      {/* 새로운 스테이지 소식 */}
+      {/* 공연일이 임박한 스테이지 */}
       <div className='flex flex-col mx-[16px] mt-[16px]'>
         <div className={`flex flex-row w-full h-fit justify-between items-center`}>
           <div className={`flex flex-row items-center`}>
-            <p className={`font-semibold text-[22px] p-0 mr-1`}>새로운</p>
-            <p className={`text-xl mr-1`}>스테이지</p>
-            <p className={`text-xl mr-2`}>소식</p>
-            <img src={pinImg} alt="pinImg"/>
+            <p className={`font-semibold text-[22px] p-0 m-0`}>공연일</p>
+            <p className={`text-xl p-0 mr-1`}>이</p>
+            <p className={`font-semibold text-[22px] mr-1`}>임박한</p>
+            <p className={`text-xl mr-2`}>스테이지</p>
+            <img src={handImg} alt="handImg"/>
           </div>
         </div>
-        <p className={`text-zinc-400`}>가장 최근에 등록된 공연순으로 보여드립니다</p>
+        <p className={`text-zinc-400`}>곧 공연하는 공연순으로 보여드립니다</p>
       </div>
       {/* 무대들 */}
       <div className={`flex flex-col m-[16px] w-100vh h-full`}>

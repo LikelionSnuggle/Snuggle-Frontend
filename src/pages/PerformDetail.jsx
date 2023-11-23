@@ -1,6 +1,7 @@
-import React from "react";
-import thumbnail from "../assets/performDetail/performDetail-thumbnail.jpg";
-import scrapIcon from "../assets/all-icon-scrap.svg";
+import React, { useState } from "react";
+import thumbnail from "../assets/performDetail-thumbnail.jpg";
+import scrapIcon from "../assets/all-icon-scrap-gray.svg";
+import scrapedIcon from "../assets/all-icon-scrap-orange-filled.svg"
 import locationIcon from "../assets/all-icon-location-orange.svg";
 import calendarIcon from "../assets/all-icon-calendar.svg";
 import linkIcon from "../assets/all-icon-link.svg";
@@ -10,6 +11,11 @@ import nextIcon from "../assets/all-icon-next.svg";
 import KakaoMap from "../components/KakaoMap";
 
 export default function PerformDetail() {
+  const [isScraped, setIsScraped] = useState(false);
+  const handleScrapIconClick = () =>{
+    setIsScraped((prev) => !prev);
+  }
+
   return (
     <div className={`flex flex-col text-justify`}>
       <img className={"w-full h-[270px]"} src={thumbnail} alt="thumbnail" />
@@ -32,7 +38,11 @@ export default function PerformDetail() {
       {/* title, scrap 버튼 */}
       <div className={"flex flex-row justify-between px-[16px] w-full"}>
         <p className={`text-black text-3xl font-bold`}>스너글 페스티벌 2023</p>
-        <img className={`mx-2`} src={scrapIcon} alt="scrapIcon" />
+        <img 
+          className={`mx-2 p-0`} 
+          src={isScraped ? scrapedIcon : scrapIcon}
+          onClick={handleScrapIconClick} 
+          alt="scrapIcon" />
       </div>
       <hr className={`my-4`} />
       {/* 장소, 날짜 */}
@@ -56,12 +66,12 @@ export default function PerformDetail() {
         바에 의하여 우선적으로 근로의 기회를 부여받는다.
       </p>
       {/* 인터파크 링크, 태그 */}
-      <div className="flex flex-col gap-4 px-[22px]">
-        <div className={`flex flex-row w-full gap-4`}>
+      <div className="flex flex-col gap-4">
+        <div className={`flex flex-row w-full gap-4 px-[22px]`}>
           <img src={linkIcon} alt="linkIcon" />
           <p className={`font-semibold`}>스너글 페스티벌 2023</p>
         </div>
-        <div className={`flex flex-row w-full gap-4`}>
+        <div className={`flex flex-row w-full gap-4 px-[22px]`}>
           <img src={tagIcon} alt="tagIcon" />
           <div className="flex flex-row gap-2">
             <div
@@ -85,36 +95,26 @@ export default function PerformDetail() {
           </div>
         </div>
         {/* 카카오맵 */}
-        <div className={`w-full h-[288px] mt-[32px]`}>
-          <KakaoMap height="288px" width="30rem" />
+        <div className={`w-full h-[288px] my-[20px] relative`}>
+          <KakaoMap height="288px" className={`absolute left-0 right-0`}/>
         </div>
         {/* 페이지 */}
-        <div className={`flex flex-row w-full h-fit px-[16px] py-[24px]`}>
-          <img
-            className={`w-[90px] h-[90px]`}
-            src={thumbnail}
-            alt="thumbnail"
-          />
+        <div className={`flex flex-row w-full h-fit px-[22px]`}>
+          <img className={`w-[90px] h-[90px]`} src={thumbnail} alt="thumbnail"/>
           <div className={`flex flex-col px-[16px]`}>
             <div className={`flex flex-row justify-between`}>
               <p className={`font-bold my-2`}>멋쟁이 사자처럼</p>
-              <img src={nextIcon} alt="nextIcon" />
+              <img src={nextIcon} alt="nextIcon"/>
             </div>
             <p className={`font-normal text-sm py-0`}>
-              한양대학교 ERICA캠퍼스 실용음악과 15학번 한승우, 김예은, 16학번
-              음상훈, 전고은 학번은 ...
+            한양대학교 ERICA캠퍼스 실용음악과 15학번 한승우, 김예은, 16학번 음상훈, 전고은 학번은 ...
             </p>
           </div>
-          <p className={`font-normal text-sm py-0`}>
-            한양대학교 ERICA캠퍼스 실용음악과 15학번 한승우, 김예은, 16학번
-            음상훈, 전고은 학번은 ...
-          </p>
         </div>
       </div>
+
       {/* 전화번호 */}
-      <div
-        className={`flex flex-row px-[16px] mb-[24px] gap-4 w-full h-fit items-center`}
-      >
+      <div className={`flex flex-row px-[16px] m-[22px] gap-4 w-full h-fit items-center`}>
         <p className={`w-[40px] font-semibold text-zinc-400`}>문의</p>
         <div className={`h-[32px] w-[4px] bg-zinc-300`} />
         <div className={`flex flex-row gap-4 w-full`}>

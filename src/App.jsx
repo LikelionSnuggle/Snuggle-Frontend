@@ -8,9 +8,9 @@ import Home from "./pages/Home";
 import PerformDetail from "./pages/PerformDetail";
 import PerformPost from "./pages/PerformPost";
 import Navigation from "./components/Navigation";
-// import NewPerformList from "./pages/NewPerform";
 import NewPerform from "./pages/NewPerform";
 import NearPerform from "./pages/NearPerform";
+import UpcomingPerform from "./pages/UpcomingPerform";
 
 function App() {
   return (
@@ -22,9 +22,10 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="map" element={<Map />} />
           <Route path="home" element={<Home />} />
-          <Route path="newperform" element={<NewPerform />} />
-          <Route path="nearperform" element={<NearPerform />} />
-          <Route path="perform/detail" element={<PerformDetail />} />
+          <Route path="home/newperform" element={<NewPerform />} />
+          <Route path="home/nearperform" element={<NearPerform />} />
+          <Route path="home/upcomingperform" element={<UpcomingPerform />} />
+          <Route path="perform/detail/:id" element={<PerformDetail />} />
           <Route path="perform/post" element={<PerformPost />} />
         </Routes>
 
