@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from "react";
 import PerformCardSmall from '../components/PerformCardSmall';
 import PerformThumbnail from '../assets/performDetail-thumbnail.jpg'
 import { Link } from 'react-router-dom';
