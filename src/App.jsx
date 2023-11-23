@@ -10,6 +10,7 @@ import PerformPost from "./pages/PerformPost";
 import Navigation from "./components/Navigation";
 import NewPerform from "./pages/NewPerform";
 import NearPerform from "./pages/NearPerform";
+import ArtistProfile from "./pages/ArtistProfile";
 import UpcomingPerform from "./pages/UpcomingPerform";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="home/upcomingperform" element={<UpcomingPerform />} />
           <Route path="perform/detail/:id" element={<PerformDetail />} />
           <Route path="perform/post" element={<PerformPost />} />
+          <Route path="profile" element={<ArtistProfile />} />
         </Routes>
 
         <Navigation />
