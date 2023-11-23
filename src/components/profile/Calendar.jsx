@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import IconPrev from "../../assets/All-icon-prev";
 import IconNext from "../../assets/All-icon-next";
@@ -6,6 +6,7 @@ import IconNext from "../../assets/All-icon-next";
 function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [onClickDate, setOnClickDate] = useState("");
+
   // eslint-disable-next-line
   const [events, setEvents] = useState([
     { date: "2023-11-07", event: "라이브잼 콘서트" },
@@ -198,6 +199,25 @@ function Calendar() {
       ))}
       <div className="pt-[17px] px-4">
         <p className="font-medium text-[18px]">공연 일정</p>
+      </div>
+      <div className="h-[72px] w-full px-[16px] mt-[30px]">
+        <div className="bg-[#F5F5F5] w-full h-full border-lg flex items-center">
+          <p className="w-[54px] text-center text-[14px] font-medium text-darkGrey">
+            10.7
+          </p>
+          <div className="h-full bg-signature w-[6px]" />
+          <div className="flex items-center justify-between w-full pl-[16px] pr-[18px]">
+            <div className="flex flex-col gap-[6px]">
+              <p className="text-[14px] font-medium text-darkGrey">
+                라이브잼 세션
+              </p>
+              <p className="text-[14px] font-medium text-lightGrey">
+                한강공원 입구
+              </p>
+            </div>
+            <p className="text-[14px] font-medium text-lightGrey">18:00</p>
+          </div>
+        </div>
       </div>
     </>
   );
