@@ -1,5 +1,5 @@
 import React from 'react'
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import PerformCardSmall from '../components/PerformCardSmall';
 import PerformThumbnail from '../assets/performDetail-thumbnail.jpg'
 import { Link } from 'react-router-dom';
@@ -12,61 +12,61 @@ import banner3 from '../assets/home/home-banner3.png'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
-const performList = [
-  {
-    id:0,
-    img: PerformThumbnail,
-    date: "D-8",
-    payment: "유료",
-    title: "스너글 페스티벌 2023",
-    location: "잠실종합운동장",
-    scraped: false,
-    tags: ["콘서트", "관심공연"],
-  },
-  {
-    id:1,
-    img: PerformThumbnail,
-    date: "D-8",
-    payment: "유료",
-    title: "스너글 페스티벌 2023",
-    location: "잠실종합운동장",
-    scraped: false,
-    tags: ["콘서트", "관심공연"],
-  },
-  {
-    id:2,
-    img: PerformThumbnail,
-    date: "D-8",
-    payment: "유료",
-    title: "스너글 페스티벌 2023",
-    location: "잠실종합운동장",
-    scraped: false,
-    tags: ["콘서트", "관심공연"],
-  },
-  {
-    id:3,
-    img: PerformThumbnail,
-    date: "D-8",
-    payment: "유료",
-    title: "스너글 페스티벌 2023",
-    location: "잠실종합운동장",
-    scraped: false,
-    tags: ["콘서트", "관심공연"],
-  },
-  {
-    id:4,
-    img: PerformThumbnail,
-    date: "D-5",
-    payment: "무료",
-    title: "가을 캠프파이어",
-    location: "한강 공원",
-    scraped: true,
-    tags: ["야외공연", "추천"],
-  },
-];
+// const performList = [
+//   {
+//     id:0,
+//     img: PerformThumbnail,
+//     date: "D-8",
+//     payment: "유료",
+//     title: "스너글 페스티벌 2023",
+//     location: "잠실종합운동장",
+//     scraped: false,
+//     tags: ["콘서트", "관심공연"],
+//   },
+//   {
+//     id:1,
+//     img: PerformThumbnail,
+//     date: "D-8",
+//     payment: "유료",
+//     title: "스너글 페스티벌 2023",
+//     location: "잠실종합운동장",
+//     scraped: false,
+//     tags: ["콘서트", "관심공연"],
+//   },
+//   {
+//     id:2,
+//     img: PerformThumbnail,
+//     date: "D-8",
+//     payment: "유료",
+//     title: "스너글 페스티벌 2023",
+//     location: "잠실종합운동장",
+//     scraped: false,
+//     tags: ["콘서트", "관심공연"],
+//   },
+//   {
+//     id:3,
+//     img: PerformThumbnail,
+//     date: "D-8",
+//     payment: "유료",
+//     title: "스너글 페스티벌 2023",
+//     location: "잠실종합운동장",
+//     scraped: false,
+//     tags: ["콘서트", "관심공연"],
+//   },
+//   {
+//     id:4,
+//     img: PerformThumbnail,
+//     date: "D-5",
+//     payment: "무료",
+//     title: "가을 캠프파이어",
+//     location: "한강 공원",
+//     scraped: true,
+//     tags: ["야외공연", "추천"],
+//   },
+// ];
 
 export default function Home() {
-  const [performList, setPerformList] = useState([]);
+  //const [performList, setPerformList] = useState([]);
 
   // useEffect(() => {
   //   // API 호출 및 데이터 받아오기
@@ -89,15 +89,15 @@ export default function Home() {
         <div className={`w-full h-[500px]`}>
           <SwiperSlide>
             <p className="p-[16px] text-[28px] font-bold text-white z-10 absolute">SNUGGLE</p>
-            <img src={banner1} style={{objectFit: 'cover', width: '100%', height: '100%'}}/>
+            <img alt="banner1" src={banner1} style={{objectFit: 'cover', width: '100%', height: '100%'}}/>
           </SwiperSlide>
           <SwiperSlide>
             <p className="p-[16px] text-[28px] font-bold text-white z-10 absolute">SNUGGLE</p>
-            <img src={banner2} style={{objectFit: 'cover', width: '100%', height: '100%'}}/>
+            <img alt="banner2"  src={banner2} style={{objectFit: 'cover', width: '100%', height: '100%'}}/>
           </SwiperSlide>
           <SwiperSlide>
             <p className="p-[16px] text-[28px] font-bold text-white z-10 absolute">SNUGGLE</p>
-            <img src={banner3} style={{objectFit: 'cover', width: '100%', height: '100%'}}/>
+            <img alt="banner3" src={banner3} style={{objectFit: 'cover', width: '100%', height: '100%'}}/>
           </SwiperSlide>
         </div>
       </Swiper>
@@ -109,7 +109,7 @@ export default function Home() {
             <p className={`text-xl p-0 mr-2`}>의</p>
             <p className={`font-semibold text-[22px] mr-1`}>HOT</p>
             <p className={`text-xl mr-2`}>스테이지</p>
-            <img src={fireImg}/>
+            <img src={fireImg} alt="fireImg"/>
           </div>
           <Link to="/home/nearperform" className={`font-semibold text-zinc-300`}>모두보기</Link>
         </div>
@@ -148,7 +148,7 @@ export default function Home() {
             <p className={`font-semibold text-[22px] p-0 mr-1`}>새로운</p>
             <p className={`text-xl mr-1`}>스테이지</p>
             <p className={`text-xl mr-2`}>소식</p>
-            <img src={pinImg}/>
+            <img alt="pinImg" src={pinImg}/>
           </div>
           <Link to="/home/newperform" className={`font-semibold text-zinc-300`}>모두보기</Link>
         </div>
@@ -188,7 +188,7 @@ export default function Home() {
             <p className={`text-xl p-0 mr-1`}>이</p>
             <p className={`font-semibold text-[22px] mr-1`}>임박한</p>
             <p className={`text-xl mr-2`}>스테이지</p>
-            <img src={handImg}/>
+            <img alt="hangImg" src={handImg}/>
           </div>
           <Link to="/home/upcomingperform" className={`font-semibold text-zinc-300`}>모두보기</Link>
         </div>

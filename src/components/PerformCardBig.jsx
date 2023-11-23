@@ -37,7 +37,10 @@ export default function PerformCardBig({
         className="w-fit h-1/3 p-0 absolute right-6 top-6" 
         alt="scrapIcon" />
         <div className={`flex flex-row absolute bottom-2 left-4 w-fit h-fit gap-1`}>
-          <img src={locationIcon} className={`w-6 h-6`}/>
+          <img 
+          src={locationIcon} 
+          className={`w-6 h-6`}
+          alt="locationIcon"/>
           <p className={`text-white text-[18px] font-semibold`}>{location}</p>
         </div>
       </div>

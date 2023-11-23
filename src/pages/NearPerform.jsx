@@ -1,6 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import PerformCard from '../components/PerformCardSmall'
+import { useEffect } from "react";
 import PerformThumbnail from '../assets/performDetail-thumbnail.jpg'
 import fireImg from '../assets/home/home-image-fire.svg'
 import PerformCardBig from "../components/PerformCardBig";

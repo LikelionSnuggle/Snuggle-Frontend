@@ -1,6 +1,5 @@
 import React from 'react'
-import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+import { useEffect } from "react";
 import handImg from '../assets/home/home-image-hand.svg'
 import PerformThumbnail from '../assets/performDetail-thumbnail.jpg'
 import PerformCardBig from '../components/PerformCardBig';
@@ -91,7 +90,7 @@ export default function UpcomingPerform() {
             <p className={`text-xl p-0 mr-1`}>이</p>
             <p className={`font-semibold text-[22px] mr-1`}>임박한</p>
             <p className={`text-xl mr-2`}>스테이지</p>
-            <img src={handImg}/>
+            <img src={handImg} alt="handImg"/>
           </div>
         </div>
         <p className={`text-zinc-400`}>곧 공연하는 공연순으로 보여드립니다</p>

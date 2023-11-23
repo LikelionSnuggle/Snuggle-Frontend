@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
 import thumbnail from "../assets/performDetail-thumbnail.jpg";
 import scrapIcon from "../assets/all-icon-scrap-gray.svg";
 import scrapedIcon from "../assets/all-icon-scrap-orange-filled.svg"
@@ -105,7 +104,7 @@ export default function PerformDetail() {
           <div className={`flex flex-col px-[16px]`}>
             <div className={`flex flex-row justify-between`}>
               <p className={`font-bold my-2`}>멋쟁이 사자처럼</p>
-              <img src={nextIcon}/>
+              <img src={nextIcon} alt="nextIcon"/>
             </div>
             <p className={`font-normal text-sm py-0`}>
             한양대학교 ERICA캠퍼스 실용음악과 15학번 한승우, 김예은, 16학번 음상훈, 전고은 학번은 ...

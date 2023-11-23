@@ -1,6 +1,5 @@
 import React from 'react'
-import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+import { useEffect } from "react";
 import pinImg from '../assets/home/home-image-redpin.svg'
 import PerformThumbnail from '../assets/performDetail-thumbnail.jpg'
 import PerformCardBig from '../components/PerformCardBig';
@@ -89,7 +88,7 @@ export default function NewPerform() {
             <p className={`font-semibold text-[22px] p-0 mr-1`}>새로운</p>
             <p className={`text-xl mr-1`}>스테이지</p>
             <p className={`text-xl mr-2`}>소식</p>
-            <img src={pinImg}/>
+            <img src={pinImg} alt="pinImg"/>
           </div>
         </div>
         <p className={`text-zinc-400`}>가장 최근에 등록된 공연순으로 보여드립니다</p>
