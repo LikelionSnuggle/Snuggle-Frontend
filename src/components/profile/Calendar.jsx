@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import IconPrev from "../../assets/All-icon-prev";
 import IconNext from "../../assets/All-icon-next";
