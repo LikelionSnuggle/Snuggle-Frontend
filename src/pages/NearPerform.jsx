@@ -88,7 +88,7 @@ export default function NearPerform() {
             <p className={`text-xl p-0 mr-2`}>의</p>
             <p className={`font-semibold text-[22px] mr-1`}>HOT</p>
             <p className={`text-xl mr-2`}>스테이지</p>
-            <img src={fireImg}/>
+            <img src={fireImg} alt="fireImg"/>
           </div>
         </div>
         <p className={`text-zinc-400`}>가까운 지역의 공연들을 보여드립니다</p>

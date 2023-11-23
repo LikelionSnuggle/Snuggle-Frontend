@@ -100,7 +100,7 @@ export default function PerformDetail() {
         </div>
         {/* 페이지 */}
         <div className={`flex flex-row w-full h-fit px-[22px]`}>
-          <img className={`w-[90px] h-[90px]`} src={thumbnail}/>
+          <img className={`w-[90px] h-[90px]`} src={thumbnail} alt="thumbnail"/>
           <div className={`flex flex-col px-[16px]`}>
             <div className={`flex flex-row justify-between`}>
               <p className={`font-bold my-2`}>멋쟁이 사자처럼</p>
