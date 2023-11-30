@@ -30,7 +30,7 @@ export default function PPostCollect() {
                         <div className='w-10/12 h-72 bg-neutral-400 mt-3'></div>
                     </div>
                     <div className='flex'>
-                        <img className={'w-6 ml-4 mt-1.5'} src={tagIcon}/>
+                        <img className={'w-6 ml-4 mt-1.5'} src={tagIcon} alt='태그'/>
                         <div className='flex items-center justify-between w-16 h-6 pl-2 bg-gray-200 rounded-2xl mt-1.5 ml-2'></div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@ export default function PPostCollect() {
                         <div className='w-10/12 h-72 bg-neutral-400 mt-3'></div>
                     </div>
                     <div className='flex'>
-                        <img className={'w-6 ml-4 mt-1.5'} src={tagIcon}/>
+                        <img className={'w-6 ml-4 mt-1.5'} src={tagIcon} alt='태그'/>
                         <div className='flex items-center justify-between w-16 h-6 pl-2 bg-gray-200 rounded-2xl mt-1.5 ml-2'></div>
                     </div>
                 </div>

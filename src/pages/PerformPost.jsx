@@ -232,7 +232,7 @@ export default function PerformPost() {
           </div>
           <div>
             <div className='flex'>
-              <img className={'w-8 ml-4 mt-8'} src={tagIcon}/>
+              <img className={'w-8 ml-4 mt-8'} src={tagIcon} alt='tag'/>
               <p className="text-lightGrey text-[22px] font-bold mt-8 ml-2">태그 설정</p>
             </div>
             <div>

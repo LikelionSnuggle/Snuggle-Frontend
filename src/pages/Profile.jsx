@@ -217,7 +217,7 @@ export default function NoticePost() {
           </div>
           <div>
             <div className='flex'>
-              <img className={'w-8 ml-4 mt-10'} src={tagIcon}/>
+              <img className={'w-8 ml-4 mt-10'} src={tagIcon} alt='tag'/>
               <p className="text-lightGrey text-[22px] font-bold mt-10 ml-2">태그 설정</p>
             </div>
             <div>
