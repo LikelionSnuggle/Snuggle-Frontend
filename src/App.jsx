@@ -21,7 +21,6 @@ import PPostCollect from "./pages/PPostCollect";
 import NPostCollect from "./pages/NPostCollect";
 import Filter from "./pages/Filter";
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -32,21 +31,21 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="map" element={<Map />} />
           <Route path="home" element={<Home />} />
-          <Route path="profile" element={<Profile />}/>
-          <Route path="mypage" element={<Mypage />}/>
+          <Route path="profile" element={<Profile />} />
+          <Route path="mypage" element={<Mypage />} />
           <Route path="home/newperform" element={<NewPerform />} />
           <Route path="home/nearperform" element={<NearPerform />} />
           <Route path="home/upcomingperform" element={<UpcomingPerform />} />
           <Route path="perform/detail/:id" element={<PerformDetail />} />
-          <Route path="perform/post" element={<PerformPost />}/>
-          <Route path="notice/post" element={<NoticePost />}/>
           <Route path="perform/post" element={<PerformPost />} />
-          <Route path="profile" element={<ArtistProfile />} />
-          <Route path="follow" element={<Follow />}/>
-          <Route path="filter" element={<Filter />}/>
-          <Route path="ppost/collect" element={<PPostCollect />}/>
-          <Route path="npost/collect" element={<NPostCollect />}/>
-          </Routes>
+          <Route path="notice/post" element={<NoticePost />} />
+          <Route path="perform/post" element={<PerformPost />} />
+          <Route path="artistprofile" element={<ArtistProfile />} />
+          <Route path="follow" element={<Follow />} />
+          <Route path="filter" element={<Filter />} />
+          <Route path="ppost/collect" element={<PPostCollect />} />
+          <Route path="npost/collect" element={<NPostCollect />} />
+        </Routes>
 
         <Navigation />
       </div>
