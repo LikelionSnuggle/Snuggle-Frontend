@@ -65,6 +65,7 @@ const performList = [
 ];
 
 export default function Home() {
+  // eslint-disable-next-line
   const [performListState, setPerformListState] = useState(performList);
 
   // useEffect(() => {

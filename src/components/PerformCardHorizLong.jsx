@@ -20,7 +20,7 @@ export default function PerformCardHorizLong({
       className={`gap-2 flex flex-row w-11/12 h-[150px] bg-zinc-200 content-center items-center rounded-lg`}
       onClick={() => (window.location.href = "/perform/detail/" + id)}
     >
-      <img src={img} className={"m-4 w-28 h-28"} />
+      <img src={img} className={"m-4 w-28 h-28"} alt="thumbnail" />
 
       <div className={`w-full flex flex-col gap-4`}>
         {/* 제목, 스크랩 */}
