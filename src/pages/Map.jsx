@@ -76,16 +76,18 @@ export default function Map() {
   return (
     <div className={`w-full h-full relative pb-[70px]`}>
       <KakaoMap height="50rem" widht="100rem"/>
-      <div className={`absolute bottom-0 z-10 w-full h-[270px] bg-white content-center`}> 
-        <PerformCardHorizLong 
-          id={"0"} 
-          img={PerformThumbnail} 
-          date={"D-8"} 
-          payment={"유료"} 
-          title={"스너글 페스티벌 2023"} 
-          location={"잠실종합운동장"} 
-          scraped={true}
-        />
+      <div className={`absolute bottom-0 z-10 w-full h-[300px] bg-white content-center`}> 
+        <div className={`w-full h-full `}>
+          <PerformCardHorizLong 
+            id={"0"} 
+            img={PerformThumbnail} 
+            date={"D-8"} 
+            payment={"유료"} 
+            title={"스너글 페스티벌 2023"} 
+            location={"잠실종합운동장"} 
+            scraped={true}
+          />
+        </div>
       </div>
     </div>
   );
