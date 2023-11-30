@@ -80,6 +80,7 @@ export default function PerformPost() {
 
           reader.onload = () => {
             setSelectedImage(reader.result);
+            addImageBox(); 
           };
 
           reader.readAsDataURL(file);
@@ -90,6 +91,13 @@ export default function PerformPost() {
     const handleImageClick = () => {
       document.getElementById('fileInput').click();
     };
+
+    const addImageBox = () => {
+    setInputValues((prevInputValues) => ({
+      ...prevInputValues,
+      images: [...(prevInputValues.images || []), selectedImage],
+    }));
+  };
 
     const handleChange = (e, inputName) => {
       setInputValues((prevInputValues) => ({
@@ -129,7 +137,6 @@ export default function PerformPost() {
       });
     };
 
-    const boxWidth = inputValues.input1.length * 10;
 
     const handleTicketPriceSelect = (value) => {
       setInputValues({
@@ -169,9 +176,26 @@ export default function PerformPost() {
                 onChange={handleImageUpload}
                 className="hidden"
               />
-              <div className='flex items-center justify-center bg-neutral-400 w-[90px] h-[90px] rounded-2xl mt-6 ml-4'
-              />
+              <div className='flex items-center justify-center bg-neutral-400 w-[90px] h-[90px] rounded-2xl mt-6 ml-4'>
+                {selectedImage ? (
+                  <img src={selectedImage} alt="" style={{ maxWidth: '100%', maxHeight: '100%' }} />
+                ) : (
+                  <label htmlFor="fileInput" style={{ cursor: 'pointer', border: 'none', background: 'none' }}>
+                    <div className="w-8 h-8 border border-gray-500 rounded-full flex items-center justify-center text-gray-500">
+                      +
+                    </div>
+                  </label>
+                )}
+                <input
+                  id="fileInput"
+                  type="file"
+                  accept="image/*"
+                  capture="environment"
+                  onChange={handleImageUpload}
+                  className="hidden"
+                />
               </div>
+            </div>
         </div>
         <div>
           <div>
