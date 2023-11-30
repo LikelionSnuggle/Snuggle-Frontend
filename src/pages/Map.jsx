@@ -1,8 +1,9 @@
 import React from "react";
-// import { useEffect, useState } from "react";
 import KakaoMap from "../components/KakaoMap";
-import PerformThumbnail from '../assets/performDetail-thumbnail.jpg'
+import PerformThumbnail from "../assets/performDetail-thumbnail.jpg";
 import PerformCardHorizLong from "../components/PerformCardHorizLong";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 export default function Map() {
   // const performList = [
@@ -75,19 +76,56 @@ export default function Map() {
   // ];
   return (
     <div className={`w-full h-full relative pb-[70px]`}>
-      <KakaoMap height="50rem" widht="100rem"/>
-      <div className={`absolute bottom-0 z-10 w-full h-[300px] bg-white content-center`}> 
-        <div className={`w-full h-full `}>
-          <PerformCardHorizLong 
-            id={"0"} 
-            img={PerformThumbnail} 
-            date={"D-8"} 
-            payment={"유료"} 
-            title={"스너글 페스티벌 2023"} 
-            location={"잠실종합운동장"} 
-            scraped={true}
-          />
-        </div>
+      <KakaoMap height="50rem" widht="100rem" />
+      <div
+        className={`absolute bottom-0 z-10 w-full h-[300px] bg-white px-[12px]`}
+      >
+        <Swiper
+          className={`w-full h-[500px] bg-white mt-10`}
+          slidesPerView={1.1}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          <SwiperSlide>
+            <div className={`w-full h-fit`}>
+              <PerformCardHorizLong
+                id={"0"}
+                img={PerformThumbnail}
+                date={"D-8"}
+                payment={"유료"}
+                title={"스너글 페스티벌 2023"}
+                location={"잠실종합운동장"}
+                scraped={true}
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className={`w-full h-fit`}>
+              <PerformCardHorizLong
+                id={"0"}
+                img={PerformThumbnail}
+                date={"D-8"}
+                payment={"유료"}
+                title={"스너글 페스티벌 2023"}
+                location={"잠실종합운동장"}
+                scraped={true}
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className={`w-full h-fit`}>
+              <PerformCardHorizLong
+                id={"0"}
+                img={PerformThumbnail}
+                date={"D-8"}
+                payment={"유료"}
+                title={"스너글 페스티벌 2023"}
+                location={"잠실종합운동장"}
+                scraped={true}
+              />
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );
