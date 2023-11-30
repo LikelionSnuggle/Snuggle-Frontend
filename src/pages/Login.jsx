@@ -21,7 +21,7 @@ function Login() {
   return (
     <div className="h-full px-[31px] flex flex-col justify-between pb-[66px]">
       <div></div>
-      <div className="">
+      <div>
         <GrayInput placeholder="이메일 입력" setValue={setEmail} />
         <div className="w-full h-[56px] border border-[#E8ECF4] rounded-lg bg-[#F7F8F9] flex items-center pr-[18px] mt-[15px] mb-[15px]">
           <input
