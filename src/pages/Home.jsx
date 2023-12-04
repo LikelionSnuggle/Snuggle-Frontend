@@ -84,6 +84,7 @@ export default function Home() {
         slidesPerView={1}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
+        autoplay={{ delay: 3000 }}
       >
         <div className={`w-full h-[500px]`}>
           <SwiperSlide>
