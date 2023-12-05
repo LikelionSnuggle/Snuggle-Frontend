@@ -78,7 +78,7 @@ export default function Map() {
     <div className={`w-full h-full relative pb-[70px]`}>
       <KakaoMap height="50rem" widht="100rem" />
       <div
-        className={`absolute bottom-0 z-10 w-full h-[300px] bg-white px-[12px]`}
+        className={`absolute bottom-0 z-10 w-full h-[120px] bg-white px-[12px]`}
       >
         <Swiper
           className={`w-full h-[500px] bg-white mt-10`}
