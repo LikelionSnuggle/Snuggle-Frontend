@@ -95,7 +95,7 @@ export default function SignUp() {
     );
   } else {
     return (
-      <div className="h-full flex justify-center items-center flex-col">
+      <div className="h-full flex justify-center items-center flex-col px-[20px]">
         <IconSuccess />
         <p className="font-bold text-[26px] mt-[35px] text-[#1E232C] mb-[5px]">
           가입완료 했습니다
