@@ -4,7 +4,7 @@
 
 @media (min-width: 320px) {
   html {
-    background-color: #f1f1f1;
+    /* background-color: #f1f1f1; */
     width: 100%;
     max-width: 480px;
     margin: 0 auto;
@@ -19,7 +19,12 @@
 #root {
   background-color: white;
   min-height: 100vh;
-  /* height: 100vh; */
+  height: 100%;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 @font-face {

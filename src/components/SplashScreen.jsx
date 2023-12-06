@@ -35,6 +35,7 @@ function SplashScreen() {
     backgroundPosition: "center",
     height: "100vh",
     backgroundColor: "grey",
+    overflow: "hidden",
   };
 
   return (
