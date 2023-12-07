@@ -17,6 +17,8 @@ import UpcomingPerform from "./pages/UpcomingPerform";
 import NoticePost from "./pages/NoticePost";
 // import NewPerformList from "./pages/NewPerform";
 import Follow from "./pages/Follow";
+import SavePerform from "./pages/SavePerform";
+import FollowArtist from "./pages/FollowArtist";
 import PPostCollect from "./pages/PPostCollect";
 import NPostCollect from "./pages/NPostCollect";
 import Filter from "./pages/Filter";
@@ -42,6 +44,8 @@ function App() {
           <Route path="perform/post" element={<PerformPost />} />
           <Route path="artistprofile" element={<ArtistProfile />} />
           <Route path="follow" element={<Follow />} />
+          <Route path="save/perform" element={<SavePerform />} />
+          <Route path="follow/artist" element={<FollowArtist />} />
           <Route path="filter" element={<Filter />} />
           <Route path="ppost/collect" element={<PPostCollect />} />
           <Route path="npost/collect" element={<NPostCollect />} />

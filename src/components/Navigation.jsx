@@ -16,13 +16,13 @@ export default function Navigation() {
   const navigate = useNavigate();
   const [selectedIcon, setSelectedIcon] = useState("home");
 
-  //
+  // 아이콘 눌렀을 때, 해당하는 화면으로 넘어감
   const handleIconClick = (icon) => {
     setSelectedIcon(icon);
     if (icon === "home") {
       navigate("/home");
     } else if (icon === "edit") {
-      navigate("/edit");
+      navigate("/perform/post");
     } else if (icon === "map") {
       navigate("/map");
     } else if (icon === "scrap") {
