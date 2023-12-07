@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import thumbnail from "../assets/performDetail-thumbnail.jpg";
 import scrapIcon from "../assets/all-icon-scrap-gray.svg";
