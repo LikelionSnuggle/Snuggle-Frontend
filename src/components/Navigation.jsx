@@ -38,7 +38,7 @@ export default function Navigation() {
       const prePath = window.location.pathname;
       if (prePath === "/home") {
         setSelectedIcon("home");
-      } else if (prePath === "/edit") {
+      } else if (prePath === "/perform/post") {
         setSelectedIcon("edit");
       } else if (prePath === "/map") {
         setSelectedIcon("map");
