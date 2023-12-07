@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import thumbnail from "../assets/performDetail-thumbnail.jpg";
 import scrapIcon from "../assets/all-icon-scrap-gray.svg";
@@ -12,9 +11,6 @@ import phoneIcon from "../assets/all-icon-phone.svg";
 import nextIcon from "../assets/all-icon-next.svg";
 import KakaoMap from "../components/KakaoMap";
 
-const API_URL =
-  "https://port-0-snuggle-backend-jvpb2mlof9h57p.sel5.cloudtype.app/";
-
 export default function PerformDetail() {
   const navigate = useNavigate();
 
@@ -24,28 +20,6 @@ export default function PerformDetail() {
   const handleScrapIconClick = () => {
     setIsScraped((prev) => !prev);
   };
-
-  // 공연 상세정보
-  // eslint-disable-next-line
-  const [performDetail, setPerformDetail] = useState(null);
-  // 공연 상세정보 불러오기
-  useEffect(() => {
-    const data = async () => {
-      try {
-        const responsePerformDetail = await axios.get(
-          API_URL + "api/concert/0"
-        );
-
-        console.log(responsePerformDetail);
-        console.log(responsePerformDetail.data);
-
-        setPerformDetail(responsePerformDetail.data);
-      } catch (error) {
-        console.error("데이터를 가져오는데 실패하였습니다.", error);
-      }
-    };
-    data();
-  }, []);
 
   return (
     <div className={`flex flex-col text-justify`}>
