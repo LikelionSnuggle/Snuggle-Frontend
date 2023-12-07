@@ -27,7 +27,7 @@ const Follow = () => {
           </Route>
           <Route path="/follow" exact>
             {/* 기본 페이지 설정 */}
-            <h2>상단바에서 선택하세요</h2>
+            <h2>상단바에서 선택</h2>
           </Route>
         </Routes>
       </div>
