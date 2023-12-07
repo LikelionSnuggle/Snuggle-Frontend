@@ -75,18 +75,6 @@ const RegistOrSaver = ({ savedValue, onSave }) => {
 };
 
 export default function PerformPost() {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [inputValues, setInputValues] = useState({
-    input1: "",
-    input2: "",
-    input3: "",
-    input4: "",
-    input5: "",
-    input6: "",
-    input7: "",
-    tags: [],
-  });
-
   // 마커를 관리할 ref
   const markerRef = useRef(null);
   // 카카오 맵 정보 가져오기
@@ -120,6 +108,17 @@ export default function PerformPost() {
       }
     });
   }, []);
+  const [selectedImage, setSelectedImage] = useState([]);
+  const [inputValues, setInputValues] = useState({
+    input1: "",
+    input2: "",
+    input3: "",
+    input4: "",
+    input5: "",
+    input6: "",
+    input7: "",
+    tags: [],
+  });
 
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
@@ -128,7 +127,8 @@ export default function PerformPost() {
       const reader = new FileReader();
 
       reader.onload = () => {
-        setSelectedImage(reader.result);
+        setSelectedImage((prev) => [...prev, reader.result]);
+        // setSelectedImage(reader.result);
         addImageBox();
       };
 
@@ -136,9 +136,9 @@ export default function PerformPost() {
     }
   };
 
-  const handleImageClick = () => {
-    document.getElementById("fileInput").click();
-  };
+  // const handleImageClick = () => {
+  //   document.getElementById('fileInput').click();
+  // };
 
   const addImageBox = () => {
     setInputValues((prevInputValues) => ({
@@ -210,22 +210,31 @@ export default function PerformPost() {
         <div className="flex">
           <div
             className="flex items-center justify-center bg-gray-200 w-[90px] h-[90px] rounded-2xl mt-6 ml-4"
-            onClick={handleImageClick}
+            // onClick={handleImageClick}
             style={{ cursor: "pointer" }}
           >
-            {selectedImage ? (
-              <img
-                src={selectedImage}
-                alt=""
-                style={{ maxWidth: "100%", maxHeight: "100%" }}
-              />
-            ) : (
+            {selectedImage.length === 0 ? (
               <img
                 className={"w-8 h-8"}
                 src={"../images/camera.png"}
                 alt="camera"
               />
+            ) : (
+              selectedImage.map((item) => {
+                return (
+                  <img
+                    src={item}
+                    alt=""
+                    style={{ maxWidth: "100%", maxHeight: "100%" }}
+                  />
+                );
+              })
             )}
+            {/* {selectedImage ? (
+                  <img src={selectedImage} alt="" style={{ maxWidth: '100%', maxHeight: '100%' }} />
+                ) : (
+                  <img className={'w-8 h-8'} src={'../images/camera.png'} alt="camera"/>
+                )} */}
           </div>
           <input
             id="fileInput"
@@ -236,26 +245,18 @@ export default function PerformPost() {
             className="hidden"
           />
           <div className="flex items-center justify-center bg-neutral-400 w-[90px] h-[90px] rounded-2xl mt-6 ml-4">
-            {selectedImage ? (
-              <img
-                src={selectedImage}
-                alt=""
-                style={{ maxWidth: "100%", maxHeight: "100%" }}
-              />
-            ) : (
-              <label
-                htmlFor="fileInput"
-                style={{
-                  cursor: "pointer",
-                  border: "none",
-                  background: "none",
-                }}
-              >
-                <div className="w-8 h-8 border border-gray-500 rounded-full flex items-center justify-center text-gray-500">
-                  +
-                </div>
-              </label>
-            )}
+            {/* {selectedImage ? (
+                  <img src={selectedImage} alt="" style={{ maxWidth: '100%', maxHeight: '100%' }} />
+                ) : ( */}
+            <label
+              htmlFor="fileInput"
+              style={{ cursor: "pointer", border: "none", background: "none" }}
+            >
+              <div className="w-8 h-8 border border-gray-500 rounded-full flex items-center justify-center text-gray-500">
+                +
+              </div>
+            </label>
+            {/* )} */}
             <input
               id="fileInput"
               type="file"
@@ -348,6 +349,7 @@ export default function PerformPost() {
           </p>
           <KakaoMap height="400px" widht="100rem" />
         </div>
+
         <div>
           <RegistOrSaver
             savedValue={inputValues.postSave}
