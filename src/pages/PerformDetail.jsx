@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import thumbnail from "../assets/performDetail-thumbnail.jpg";
 import scrapIcon from "../assets/all-icon-scrap-gray.svg";
 import scrapedIcon from "../assets/all-icon-scrap-orange-filled.svg";
@@ -15,6 +16,8 @@ const API_URL =
   "https://port-0-snuggle-backend-jvpb2mlof9h57p.sel5.cloudtype.app/";
 
 export default function PerformDetail() {
+  const navigate = useNavigate();
+
   // scrap
   const [isScraped, setIsScraped] = useState(false);
   // scrap 클릭이벤트
@@ -128,7 +131,10 @@ export default function PerformDetail() {
           <KakaoMap height="288px" className={`absolute left-0 right-0`} />
         </div>
         {/* 페이지 */}
-        <div className={`flex flex-row w-full h-fit px-[22px]`}>
+        <div
+          className={`flex flex-row w-full h-fit px-[22px] cursor-pointer`}
+          onClick={() => navigate("/artistprofile")}
+        >
           <img
             className={`w-[90px] h-[90px]`}
             src={thumbnail}

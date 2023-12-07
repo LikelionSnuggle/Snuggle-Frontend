@@ -11,7 +11,7 @@ function NotificationContent({ date, title, content }) {
         <div className=" border-l border-lightGrey border-dotted" />
         <div className="mt-4 w-full border-background p-[24px] border rounded-lg mb-[34px]">
           <p className="font-bold text-darkGrey text-[14px]">{title}</p>
-          <div className="bg-lightGrey h-[1px] w-full my-4"></div>
+          <div className="bg-lightGrey h-[1px] w-full my-4" />
           <p
             style={{ whiteSpace: "pre-line" }}
             className="font-medium text-[14px] text-lightGrey"

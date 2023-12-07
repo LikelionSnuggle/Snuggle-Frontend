@@ -6,6 +6,7 @@ import HashTag from "../components/HashTag";
 import Introduction from "../components/profile/Introduction";
 import Notification from "../components/profile/Notification";
 import Calendar from "../components/profile/Calendar";
+import PerformList from "../components/profile/PerformList";
 
 function ArtistProfile() {
   const [expanded, setExpanded] = useState(false);
@@ -151,6 +152,7 @@ function ArtistProfile() {
         <div className="bg-white">
           {category === 0 ? <Introduction /> : ""}
           {category === 1 ? <Notification /> : ""}
+          {category === 2 ? <PerformList /> : ""}
           {category === 3 ? <Calendar /> : ""}
         </div>
       </div>
