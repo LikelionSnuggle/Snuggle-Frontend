@@ -5,7 +5,7 @@ import IconNext from "../../assets/All-icon-next";
 
 function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [onClickDate, setOnClickDate] = useState("");
+  const [onClickDate, setOnClickDate] = useState();
 
   // eslint-disable-next-line
   const [events, setEvents] = useState([
@@ -53,14 +53,22 @@ function Calendar() {
     }
   };
 
-  const clickDate = (date) => {
-    const dateString = formatDate(date);
+  const clickDate = (date, dateString, title, lineColor) => {
+    // events 배열 안에 특정 날짜가 있는지 확인
+    const checkEvent = events.some((event) => event.date === dateString);
+
+    if (checkEvent) {
+      const barDate = `${date.getMonth() + 1}.${date.getDate()}`;
+      setOnClickDate({ date: barDate, title: title, lineColor: lineColor });
+    } else {
+      setOnClickDate(false);
+    }
+
     if (isCurrentMonth(date) === "prev") {
       handlePrevMonth();
     } else if (isCurrentMonth(date) === "next") {
       handleNextMonth();
     }
-    setOnClickDate(dateString);
   };
 
   function formatDate(date) {
@@ -173,7 +181,16 @@ function Calendar() {
                 className={`flex flex-col items-center pt-[12px] ${
                   onClickDate === dateString ? "bg-[#EFEFEF]" : ""
                 } `}
-                onClick={() => clickDate(date)}
+                onClick={() =>
+                  eventInfo
+                    ? clickDate(
+                        date,
+                        dateString,
+                        eventInfo.event,
+                        eventInfo.color
+                      )
+                    : ""
+                }
               >
                 <p
                   className={`font-medium text-[12px] ${
@@ -201,23 +218,30 @@ function Calendar() {
         <p className="font-medium text-[18px]">공연 일정</p>
       </div>
       <div className="h-[72px] w-full px-[16px] mt-[30px]">
-        <div className="bg-[#F5F5F5] w-full h-full border-lg flex items-center">
-          <p className="w-[54px] text-center text-[14px] font-medium text-darkGrey">
-            10.7
-          </p>
-          <div className="h-full bg-signature w-[6px]" />
-          <div className="flex items-center justify-between w-full pl-[16px] pr-[18px]">
-            <div className="flex flex-col gap-[6px]">
-              <p className="text-[14px] font-medium text-darkGrey">
-                라이브잼 세션
-              </p>
-              <p className="text-[14px] font-medium text-lightGrey">
-                한강공원 입구
-              </p>
+        {onClickDate ? (
+          <div className="bg-[#F5F5F5] w-full h-full border-lg flex items-center">
+            <p className="w-[54px] text-center text-[14px] font-medium text-darkGrey">
+              {onClickDate.date}
+            </p>
+            <div
+              className="h-full w-[6px]"
+              style={{ backgroundColor: onClickDate.lineColor }}
+            />
+            <div className="flex items-center justify-between w-full pl-[16px] pr-[18px]">
+              <div className="flex flex-col gap-[6px]">
+                <p className="text-[14px] font-medium text-darkGrey">
+                  {onClickDate.title}
+                </p>
+                <p className="text-[14px] font-medium text-lightGrey">
+                  한강공원 입구
+                </p>
+              </div>
+              <p className="text-[14px] font-medium text-lightGrey">18:00</p>
             </div>
-            <p className="text-[14px] font-medium text-lightGrey">18:00</p>
           </div>
-        </div>
+        ) : (
+          ""
+        )}
       </div>
     </>
   );

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import thumbnail from "../assets/performDetail-thumbnail.jpg";
 import scrapIcon from "../assets/all-icon-scrap-gray.svg";
-import scrapedIcon from "../assets/all-icon-scrap-orange-filled.svg"
+import scrapedIcon from "../assets/all-icon-scrap-orange-filled.svg";
 import locationIcon from "../assets/all-icon-location-orange.svg";
 import calendarIcon from "../assets/all-icon-calendar.svg";
 import linkIcon from "../assets/all-icon-link.svg";
@@ -11,10 +12,12 @@ import nextIcon from "../assets/all-icon-next.svg";
 import KakaoMap from "../components/KakaoMap";
 
 export default function PerformDetail() {
+  const navigate = useNavigate();
+
   const [isScraped, setIsScraped] = useState(false);
-  const handleScrapIconClick = () =>{
+  const handleScrapIconClick = () => {
     setIsScraped((prev) => !prev);
-  }
+  };
 
   return (
     <div className={`flex flex-col text-justify`}>
@@ -38,11 +41,12 @@ export default function PerformDetail() {
       {/* title, scrap 버튼 */}
       <div className={"flex flex-row justify-between px-[16px] w-full"}>
         <p className={`text-black text-3xl font-bold`}>스너글 페스티벌 2023</p>
-        <img 
-          className={`mx-2 p-0`} 
+        <img
+          className={`mx-2 p-0`}
           src={isScraped ? scrapedIcon : scrapIcon}
-          onClick={handleScrapIconClick} 
-          alt="scrapIcon" />
+          onClick={handleScrapIconClick}
+          alt="scrapIcon"
+        />
       </div>
       <hr className={`my-4`} />
       {/* 장소, 날짜 */}
@@ -96,25 +100,35 @@ export default function PerformDetail() {
         </div>
         {/* 카카오맵 */}
         <div className={`w-full h-[288px] my-[20px] relative`}>
-          <KakaoMap height="288px" className={`absolute left-0 right-0`}/>
+          <KakaoMap height="288px" className={`absolute left-0 right-0`} />
         </div>
         {/* 페이지 */}
-        <div className={`flex flex-row w-full h-fit px-[22px]`}>
-          <img className={`w-[90px] h-[90px]`} src={thumbnail} alt="thumbnail"/>
+        <div
+          className={`flex flex-row w-full h-fit px-[22px] cursor-pointer`}
+          onClick={() => navigate("/artistprofile")}
+        >
+          <img
+            className={`w-[90px] h-[90px]`}
+            src={thumbnail}
+            alt="thumbnail"
+          />
           <div className={`flex flex-col px-[16px]`}>
             <div className={`flex flex-row justify-between`}>
               <p className={`font-bold my-2`}>멋쟁이 사자처럼</p>
-              <img src={nextIcon} alt="nextIcon"/>
+              <img src={nextIcon} alt="nextIcon" />
             </div>
             <p className={`font-normal text-sm py-0`}>
-            한양대학교 ERICA캠퍼스 실용음악과 15학번 한승우, 김예은, 16학번 음상훈, 전고은 학번은 ...
+              한양대학교 ERICA캠퍼스 실용음악과 15학번 한승우, 김예은, 16학번
+              음상훈, 전고은 학번은 ...
             </p>
           </div>
         </div>
       </div>
 
       {/* 전화번호 */}
-      <div className={`flex flex-row px-[16px] m-[22px] gap-4 w-full h-fit items-center`}>
+      <div
+        className={`flex flex-row px-[16px] m-[22px] gap-4 w-full h-fit items-center`}
+      >
         <p className={`w-[40px] font-semibold text-zinc-400`}>문의</p>
         <div className={`h-[32px] w-[4px] bg-zinc-300`} />
         <div className={`flex flex-row gap-4 w-full`}>
