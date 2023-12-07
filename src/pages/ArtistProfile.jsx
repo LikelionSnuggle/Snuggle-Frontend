@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import TopBar from "../components/TopBar";
 import HashTag from "../components/HashTag";
 
+import Introduction from "../components/profile/Introduction";
+import Notification from "../components/profile/Notification";
 import Calendar from "../components/profile/Calendar";
 
 function ArtistProfile() {
@@ -20,10 +22,10 @@ function ArtistProfile() {
     : "mb-[48px] px-[16px]";
 
   return (
-    <div className="pb-[78px] h-full">
+    <div className="h-full">
       <TopBar />
       <div className="w-full h-[264px] bg-background"></div>
-      <div className="pt-[16px]">
+      <div className="pt-[16px] pb-[78px]">
         <div className="flex gap-[9px] px-[16px]">
           {hashTag.map((item) => (
             <HashTag text={item} />
@@ -146,7 +148,11 @@ function ArtistProfile() {
             캘린더
           </button>
         </div>
-        {category === 3 ? <Calendar /> : ""}
+        <div className="bg-white">
+          {category === 0 ? <Introduction /> : ""}
+          {category === 1 ? <Notification /> : ""}
+          {category === 3 ? <Calendar /> : ""}
+        </div>
       </div>
     </div>
   );
