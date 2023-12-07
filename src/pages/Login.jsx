@@ -39,7 +39,7 @@ function Login() {
             비밀번호 찾기
           </button>
         </div>
-        <RowButton text="로그인" />
+        <RowButton text="로그인" onClick={() => navigate("/home")} />
       </div>
       <div className="flex justify-center">
         <p className="text-[15px]">아직 계정이 없으신가요?&nbsp;</p>

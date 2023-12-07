@@ -60,7 +60,7 @@ function Main() {
       ) : (
         <div
           style={backgroundStyle}
-          className="flex flex-col items-center justify-around px-[20px] pb-8"
+          className="flex flex-col items-center justify-around px-[20px] pb-8 h-full"
         >
           <div />
           <div className="flex flex-col items-center gap-3 mb-8">

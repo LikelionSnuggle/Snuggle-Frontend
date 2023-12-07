@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import PerformCardSmall from "../components/PerformCardSmall";
 import PerformThumbnail from "../assets/performDetail-thumbnail.jpg";
 import { Link } from "react-router-dom";
@@ -11,7 +12,9 @@ import banner3 from "../assets/home/home-banner3.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-const performList = [
+const API_URL =
+  "https://port-0-snuggle-backend-jvpb2mlof9h57p.sel5.cloudtype.app/";
+const performDumyList = [
   {
     id: 0,
     img: PerformThumbnail,
@@ -66,15 +69,34 @@ const performList = [
 
 export default function Home() {
   // eslint-disable-next-line
-  const [performListState, setPerformListState] = useState(performList);
+  const [performListState, setPerformListState] = useState(performDumyList);
+  // eslint-disable-next-line
+  const [newPerformList, setNewPerformList] = useState(null);
+  // eslint-disable-next-line
+  const [performList, setPerformList] = useState(null);
 
-  // useEffect(() => {
-  //   // API 호출 및 데이터 받아오기
-  //   fetch("API 주소")
-  //     .then((response) => response.json())
-  //     .then((data) => setPerformList(data))
-  //     .catch((error) => console.error(error));
-  // }, []);
+  // 공연 list들 불러오기
+  useEffect(() => {
+    const data = async () => {
+      try {
+        const responseNewPerformList = await axios.get(
+          API_URL + "api/concert/recent/"
+        );
+        const responsePerformList = await axios.get(API_URL + "api/concert/");
+
+        console.log(responseNewPerformList);
+        console.log(responseNewPerformList.data);
+        console.log(responsePerformList);
+        console.log(responsePerformList.data);
+
+        setNewPerformList(responseNewPerformList.data);
+        setPerformList(responsePerformList.data);
+      } catch (error) {
+        console.error("데이터를 가져오는데 실패하였습니다.", error);
+      }
+    };
+    data();
+  }, []);
 
   return (
     <div className={`w-full h-100vh bg-white pb-[70px]`}>
@@ -84,6 +106,7 @@ export default function Home() {
         slidesPerView={1}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
+        autoplay={{ delay: 3000 }}
       >
         <div className={`w-full h-[500px]`}>
           <SwiperSlide>
@@ -148,8 +171,7 @@ export default function Home() {
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
-          {/* <div className={`w-full h-fit`}> */}
-          {performListState.map((perform) => (
+          {/* {performListState.map((perform) => (
             <SwiperSlide key={perform.id}>
               <div className={`w-full h-fit`}>
                 <PerformCardSmall
@@ -163,18 +185,53 @@ export default function Home() {
                 />
               </div>
             </SwiperSlide>
-          ))}
-
-          {/* <SwiperSlide>
-              <PerformCardSmall id={"1"} img={PerformThumbnail} date={"D-8"} payment={"유료"} title={"스너글 페스티벌 2023"} location={"잠실종합운동장"} scraped={false}/>
+          ))} */}
+          <div className={`w-full h-fit`}>
+            <SwiperSlide>
+              <PerformCardSmall
+                id={"0"}
+                img={PerformThumbnail}
+                date={"D-8"}
+                payment={"유료"}
+                title={"스너글 페스티벌 2023"}
+                location={"잠실종합운동장"}
+                scraped={false}
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <PerformCardSmall id={"2"} img={PerformThumbnail} date={"D-8"} payment={"유료"} title={"스너글 페스티벌 2023"} location={"잠실종합운동장"} scraped={false}/>
+              <PerformCardSmall
+                id={"1"}
+                img={PerformThumbnail}
+                date={"D-8"}
+                payment={"유료"}
+                title={"스너글 페스티벌 2023"}
+                location={"잠실종합운동장"}
+                scraped={false}
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <PerformCardSmall id={"3"} img={PerformThumbnail} date={"D-8"} payment={"유료"} title={"스너글 페스티벌 2023"} location={"잠실종합운동장"} scraped={false}/>
-            </SwiperSlide> */}
-          {/* </div> */}
+              <PerformCardSmall
+                id={"2"}
+                img={PerformThumbnail}
+                date={"D-8"}
+                payment={"유료"}
+                title={"스너글 페스티벌 2023"}
+                location={"잠실종합운동장"}
+                scraped={false}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <PerformCardSmall
+                id={"3"}
+                img={PerformThumbnail}
+                date={"D-8"}
+                payment={"유료"}
+                title={"스너글 페스티벌 2023"}
+                location={"잠실종합운동장"}
+                scraped={false}
+              />
+            </SwiperSlide>
+          </div>
         </Swiper>
       </div>
 

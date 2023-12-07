@@ -1,7 +1,7 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import SavePerform from './pages/SavePerform';
-import FolloweArtist from './pages/FollowArtist';
+import React from "react";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import SavePerform from "./SavePerform";
+import FolloweArtist from "./FollowArtist";
 
 const Follow = () => {
   return (
