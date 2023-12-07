@@ -61,7 +61,7 @@ const RegistOrSaver = ({ savedValue, onSave }) => {
 
 export default function PerformPost() {
 
-    const [selectedImage, setSelectedImage] = useState(null);
+    const [selectedImage, setSelectedImage] = useState([]);
     const [inputValues, setInputValues] = useState({
       input1: '',
       input2: '',
@@ -79,7 +79,8 @@ export default function PerformPost() {
           const reader = new FileReader();
 
           reader.onload = () => {
-            setSelectedImage(reader.result);
+            setSelectedImage((prev) => [...prev, reader.result] )
+            // setSelectedImage(reader.result);
             addImageBox(); 
           };
 
@@ -88,16 +89,16 @@ export default function PerformPost() {
     
     };
 
-    const handleImageClick = () => {
-      document.getElementById('fileInput').click();
-    };
+    // const handleImageClick = () => {
+    //   document.getElementById('fileInput').click();
+    // };
 
     const addImageBox = () => {
-    setInputValues((prevInputValues) => ({
-      ...prevInputValues,
-      images: [...(prevInputValues.images || []), selectedImage],
-    }));
-  };
+      setInputValues((prevInputValues) => ({
+        ...prevInputValues,
+        images: [...(prevInputValues.images || []), selectedImage],
+      }));
+    };
 
     const handleChange = (e, inputName) => {
       setInputValues((prevInputValues) => ({
@@ -159,14 +160,17 @@ export default function PerformPost() {
             <p className="text-lightGrey text-[22px] font-bold mt-24 ml-4">공연목록</p>
             <div className='flex'>
               <div className='flex items-center justify-center bg-gray-200 w-[90px] h-[90px] rounded-2xl mt-6 ml-4'
-                onClick={handleImageClick}
+                // onClick={handleImageClick}
                 style={{ cursor: 'pointer'}}
               >
-                {selectedImage ? (
+                {selectedImage.length === 0 ? <img className={'w-8 h-8'} src={'../images/camera.png'} alt="camera"/> : selectedImage.map((item) => {
+                  return (<img src={item} alt="" style={{ maxWidth: '100%', maxHeight: '100%' }} />)
+                })}
+                {/* {selectedImage ? (
                   <img src={selectedImage} alt="" style={{ maxWidth: '100%', maxHeight: '100%' }} />
                 ) : (
                   <img className={'w-8 h-8'} src={'../images/camera.png'} alt="camera"/>
-                )}
+                )} */}
               </div>
               <input
                 id="fileInput"
@@ -177,15 +181,15 @@ export default function PerformPost() {
                 className="hidden"
               />
               <div className='flex items-center justify-center bg-neutral-400 w-[90px] h-[90px] rounded-2xl mt-6 ml-4'>
-                {selectedImage ? (
+                {/* {selectedImage ? (
                   <img src={selectedImage} alt="" style={{ maxWidth: '100%', maxHeight: '100%' }} />
-                ) : (
+                ) : ( */}
                   <label htmlFor="fileInput" style={{ cursor: 'pointer', border: 'none', background: 'none' }}>
                     <div className="w-8 h-8 border border-gray-500 rounded-full flex items-center justify-center text-gray-500">
                       +
                     </div>
                   </label>
-                )}
+                {/* )} */}
                 <input
                   id="fileInput"
                   type="file"

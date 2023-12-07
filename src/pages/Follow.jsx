@@ -1,9 +1,38 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import SavePerform from './pages/SavePerform';
+import FolloweArtist from './pages/FollowArtist';
 
-export default function Follow() {
+const Follow = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/follow/saved">저장한 공연</Link>
+            </li>
+            <li>
+              <Link to="/follow/followed">팔로우한 아티스트</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/follow/saved">
+            <SavePerform />
+          </Route>
+          <Route path="/follow/followed">
+            <FolloweArtist />
+          </Route>
+          <Route path="/follow" exact>
+            {/* 기본 페이지 설정 */}
+            <h2>상단바에서 선택하세요</h2>
+          </Route>
+        </Routes>
+      </div>
+    </Router>
+  );
+};
+
+export default Follow;

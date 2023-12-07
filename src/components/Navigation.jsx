@@ -13,6 +13,8 @@ export default function Navigation() {
     "/home/newperform",
     "/home/nearperform",
     "/home/upcomingperform",
+    "/perform/post"
+    
   ];
 
   // 특정 패턴으로 시작하는 경로들을 위한 배열

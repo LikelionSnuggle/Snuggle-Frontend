@@ -1,3 +1,4 @@
+import React from 'react'
 import { useNavigate } from "react-router-dom";
 
 import IconArrowLeft from "../assets/All-icon-prev";

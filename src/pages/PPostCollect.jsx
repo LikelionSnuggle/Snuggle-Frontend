@@ -25,7 +25,7 @@ export default function PPostCollect() {
                 </div>
                 <div className='w-11/12 h-96 ml-5 mt-3 border border-gray-300 rounded-xl'>
                     <p className='ml-4 mt-3 text-[16px] text-neutral-500 font-medium'>게시글 이름</p>
-                    <div className='justify-center items-center'>
+                    <div className='flex flex-col items-center'>
                         <hr className='w-10/12 mt-2'></hr>
                         <div className='w-10/12 h-72 bg-neutral-400 mt-3'></div>
                     </div>
@@ -47,7 +47,7 @@ export default function PPostCollect() {
                 </div>
                 <div className='w-11/12 h-96 ml-5 mt-3 border border-gray-300 rounded-xl'>
                     <p className='ml-4 mt-3 text-[16px] text-neutral-500 font-medium'>게시글 이름</p>
-                    <div className='justify-center items-center'>
+                    <div className='flex flex-col items-center'>
                         <hr className='w-10/12 mt-2'></hr>
                         <div className='w-10/12 h-72 bg-neutral-400 mt-3'></div>
                     </div>
